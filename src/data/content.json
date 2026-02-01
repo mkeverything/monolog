@@ -132,6 +132,63 @@
         "multiplierValue": "7",
         "caption": "выгоднее"
       }
+    },
+    "workflow": {
+      "title": "Как мы запускаем продукты",
+      "steps": [
+        {
+          "number": "1",
+          "title": "Разбор задачи",
+          "description": "Фиксируем бизнес-цель и контекст использования продукта"
+        },
+        {
+          "number": "2",
+          "title": "Формирование сценариев",
+          "description": "Определяем ключевой пользовательский путь, минимальный набор функций и критерии успеха"
+        },
+        {
+          "number": "3",
+          "title": "Проектирование и разработка",
+          "description": "Создаем рабочую версию продукта без лишней сложности и перегруза"
+        },
+        {
+          "number": "4",
+          "title": "Тестирование и запуск",
+          "description": "Проверяем стабильность, помогаем с запуском и сбором первичной обратной связи"
+        },
+        {
+          "number": "5",
+          "title": "Поддержка и развитие",
+          "description": "Помогаем с доработками, исправлениями и развитием продукта по мере его использования"
+        }
+      ],
+      "gallery": [
+        {
+          "number": "1",
+          "alt": "card-1",
+          "src": "/assets/process-gallery/card-1.png"
+        },
+        {
+          "number": "2",
+          "alt": "card-2",
+          "src": "/assets/process-gallery/card-2.png"
+        },
+        {
+          "number": "3",
+          "alt": "card-3",
+          "src": "/assets/process-gallery/card-3.png"
+        },
+        {
+          "number": "4",
+          "alt": "card-4",
+          "src": "/assets/process-gallery/card-4.png"
+        },
+        {
+          "number": "5",
+          "alt": "card-5",
+          "src": "/assets/process-gallery/card-5.png"
+        }
+      ]
     }
   },
   "about": {
