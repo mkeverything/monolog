@@ -33,7 +33,7 @@ export default function Hero({
           {home.hero.ctaPrimary?.label}
         </Button>
       </div>
-      <div className="grid grid-cols-[max-content_auto_max-content_1fr] gap-2">
+      <div className="max-sm:hidden grid grid-cols-[max-content_auto_max-content_1fr] gap-2">
         {contact.contactInfo.contacts.map((item) => (
           <Fragment key={item.label}>
             <div className="text-accent whitespace-nowrap">{item.label}</div>
