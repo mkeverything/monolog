@@ -20,7 +20,7 @@ const variantStyles: Record<ButtonVariant, string> = {
   secondary:
     "bg-secondary text-secondary-content hover:bg-secondary/90 focus:ring-secondary",
   outline:
-    "border-2 border-primary text-primary hover:bg-primary hover:text-primary-content focus:ring-primary",
+    "border-2 border-primary text-primary hover:bg-primary hover:text-primary focus:ring-primary",
   ghost: "text-primary hover:bg-primary/10 focus:ring-primary",
   accent: "bg-accent text-base-100 hover:bg-accent/90 focus:ring-primary",
 }

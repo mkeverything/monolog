@@ -7,6 +7,7 @@ import { useState } from "react"
 import { getHeaderContent } from "../lib/cms"
 import { cn } from "../lib/utils"
 import { Button } from "./ui/Button"
+import { Badge } from "./ui/Badge"
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -39,9 +40,9 @@ export function Header() {
                 className={`hover:text-accent flex gap-2 font-light transition-colors duration-200 tab ${pathname === item.href ? "tab-active" : "text-white"}`}
               >
                 {item.href === "/projects" && (
-                  <div className="badge badge-accent text-base-100 badge-xs font-medium text-[8px] rounded-full aspect-square">
+                  <Badge className="badge-accent text-base-100 badge-xs font-medium text-[8px] rounded-full aspect-square">
                     {header.projectCounter}
-                  </div>
+                  </Badge>
                 )}
                 {item.label}
               </Link>

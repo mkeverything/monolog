@@ -19,7 +19,7 @@
       }
     ],
     "logo": {
-      "src": "/logo.svg",
+      "src": "/assets/logo.svg",
       "alt": "Monolog Logo"
     },
     "accentButton": {
@@ -80,25 +80,58 @@
       ],
       "cta": "Перейти к этапам разработки"
     },
-    "testimonials": {
-      "title": "What People Say",
-      "items": [
-        {
-          "quote": "Monolog transformed how I share my stories with the world",
-          "author": "Sarah Chen",
-          "role": "Writer"
-        },
-        {
-          "quote": "The best platform for creative professionals",
-          "author": "Marcus Johnson",
-          "role": "Designer"
-        },
-        {
-          "quote": "Intuitive, powerful, and beautiful",
-          "author": "Emma Williams",
-          "role": "Artist"
-        }
-      ]
+    "steps": {
+      "developing": {
+        "title": "Что мы разрабатываем",
+        "items": [
+          "Лендинги",
+          "Веб-приложения",
+          "Продуктовые сайты",
+          "Telegram-боты",
+          "E-commerce",
+          "SaaS",
+          "EdTech",
+          "Внутренние кабинеты",
+          "Интеграции",
+          "Системы управления"
+        ]
+      },
+      "deadlines": {
+        "title": "Срок запуска",
+        "value": "2-4",
+        "caption": "недели",
+        "description": "типовой запуск первой версии"
+      },
+      "automation": {
+        "title": "Какие процессы автоматизируем",
+        "items": [
+          "Комментарии",
+          "Интеграции сервисов",
+          "Уведомления и боты",
+          "Лиды",
+          "Отчеты",
+          "Антиспам",
+          "CRM",
+          "Постинг",
+          "Telegram",
+          "Avito",
+          "Аналитика",
+          "Обращения",
+          "Логи",
+          "Парсинг данных",
+          "Модерация",
+          "Скрапинг данных",
+          "Фильтрация"
+        ]
+      },
+      "pricing": {
+        "title": "Продуктовый уровень без агентской наценки",
+        "monolog": "Monolog",
+        "agencies": "Агенства",
+        "upto": "до",
+        "multiplierValue": "7",
+        "caption": "выгоднее"
+      }
     }
   },
   "about": {

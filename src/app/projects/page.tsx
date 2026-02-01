@@ -16,10 +16,10 @@ export default function ContactPage() {
       {/* Hero Section */}
       <FullPageSection background="primary" id="contact-hero">
         <div className="text-center">
-          <SectionTitle as="h1" className="text-primary-content">
+          <SectionTitle as="h1" className="text-primary">
             {contact.hero.title}
           </SectionTitle>
-          <SectionSubtitle className="text-primary-content/80">
+          <SectionSubtitle className="text-primary/80">
             {contact.hero.subtitle}
           </SectionSubtitle>
         </div>

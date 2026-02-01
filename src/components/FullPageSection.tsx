@@ -10,7 +10,7 @@ interface FullPageSectionProps {
 
 const backgroundStyles = {
   default: "bg-white",
-  primary: "bg-primary text-primary-content",
+  primary: "bg-primary text-primary",
   secondary: "bg-secondary text-secondary-content",
   accent: "bg-accent text-accent-content",
   neutral: "bg-neutral text-neutral-content",
@@ -27,7 +27,7 @@ export function FullPageSection({
     <section
       id={id}
       className={cn(
-        "h-[calc(100dvh-80px)] w-full snap-start p-4 sm:p-6",
+        "h-screen w-full p-4 sm:p-6",
         backgroundStyles[background],
         className,
         centered && "flex flex-col items-center justify-center",

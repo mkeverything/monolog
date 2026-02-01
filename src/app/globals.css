@@ -9,10 +9,11 @@
   --color-base-200: oklch(98% 0 0);
   --color-base-300: oklch(95% 0 0);
   --color-base-content: oklch(21% 0.006 285.885);
-  --color-primary: #171717;
-  --color-primary-content: oklch(0% 0 0);
+  --color-primary: oklch(0% 0 0);
+  --color-primary-content: #ffffff;
   --color-secondary: #e3e3e3;
   --color-secondary-content: oklch(55% 0 0);
+  --color-secondary-ghost: #f0f0f0;
   --color-accent: #e75820;
   --color-accent-content: oklch(38% 0.063 188.416);
   --color-neutral: #f9f9f9;
@@ -32,9 +33,40 @@
   --size-field: 0.25rem;
   --border: 1px;
   --depth: 1;
-  --noise: 1;
+  --noise: 0;
 }
 
-body {
+html {
   white-space: pre-line;
+  user-select: none;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 20s linear infinite;
+}
+
+.animate-scroll-right {
+  animation: scroll-right 20s linear infinite;
+}
+
+.animate-scroll-left-slow {
+  animation: scroll-left 30s linear infinite;
 }
