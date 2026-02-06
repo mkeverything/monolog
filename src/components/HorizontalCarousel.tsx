@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
@@ -9,28 +9,35 @@ import { Badge } from './ui/Badge'
 import { Button } from './ui/Button'
 import { Card } from './ui/Card'
 
+interface HorizontalCarouselProps {
+  data: SiteContent['home']['workflow']
+  scrollProgress?: number
+}
+
+let mounted = false
+
 export function HorizontalCarousel({
   data,
-}: {
-  data: SiteContent['home']['workflow']
-}) {
+  scrollProgress = 0,
+}: HorizontalCarouselProps) {
   const images = data.gallery
   const carouselRef = useRef<HTMLDivElement>(null)
   const [activeIndex, setActiveIndex] = useState(0)
-  const [canScrollLeft, setCanScrollLeft] = useState(false)
-  const [canScrollRight, setCanScrollRight] = useState(true)
+
+  useEffect(() => {
+    if (!mounted) {
+      mounted = true
+    }
+  })
 
   const checkScrollability = () => {
     const carousel = carouselRef.current
     if (!carousel) return
 
     const scrollLeft = carousel.scrollLeft
-    const maxScroll = carousel.scrollWidth - carousel.clientWidth
     const itemWidth = carousel.scrollWidth / images.length
     const currentIndex = Math.round(scrollLeft / itemWidth)
 
-    setCanScrollLeft(scrollLeft > 0)
-    setCanScrollRight(scrollLeft < maxScroll - 1)
     setActiveIndex(Math.min(currentIndex, images.length - 1))
   }
 
@@ -46,16 +53,19 @@ export function HorizontalCarousel({
     return () => carousel.removeEventListener('scroll', handleScroll)
   })
 
-  const scroll = (direction: 'left' | 'right') => {
+  // Auto-scroll based on section scroll progress
+  useEffect(() => {
     const carousel = carouselRef.current
     if (!carousel) return
 
-    const itemWidth = carousel.scrollWidth / images.length
-    carousel.scrollBy({
-      left: direction === 'left' ? -itemWidth : itemWidth,
-      behavior: 'smooth',
+    const maxScroll = carousel.scrollWidth - carousel.clientWidth
+    const targetScroll = scrollProgress * maxScroll
+
+    carousel.scrollTo({
+      left: targetScroll,
+      behavior: 'auto',
     })
-  }
+  }, [scrollProgress])
 
   const progressPercentage = Math.round(
     ((activeIndex + 1) / images.length) * 100,
@@ -98,24 +108,6 @@ export function HorizontalCarousel({
               </div>
             ))}
           </div>
-
-          {/* Navigation Buttons */}
-          <button
-            onClick={() => scroll('left')}
-            disabled={!canScrollLeft}
-            className='absolute left-4 top-1/2 -translate-y-1/2 btn btn-circle btn-sm bg-base-100/80 hover:bg-base-100 disabled:opacity-30 disabled:cursor-not-allowed transition-opacity z-10'
-            aria-label='Previous image'
-          >
-            <ChevronLeft className='w-4 h-4' />
-          </button>
-          <button
-            onClick={() => scroll('right')}
-            disabled={!canScrollRight}
-            className='absolute right-4 top-1/2 -translate-y-1/2 btn btn-circle btn-sm bg-base-100/80 hover:bg-base-100 disabled:opacity-30 disabled:cursor-not-allowed transition-opacity z-10'
-            aria-label='Next image'
-          >
-            <ChevronRight className='w-4 h-4' />
-          </button>
         </div>
       </div>
 
@@ -139,26 +131,28 @@ export function HorizontalCarousel({
             </Badge>
           </Button>
         </div>
-        <Card className='py-2 px-4'>
-          <div className='w-full flex gap-1 justify-between'>
-            {Array.from({ length: images.length * barLength }).map(
-              (_, index) => {
-                const filledBars = activeIndex * barLength
+        {mounted && (
+          <Card className='py-2 px-4'>
+            <div className='w-full flex gap-1 justify-between'>
+              {Array.from({ length: images.length * barLength }).map(
+                (_, index) => {
+                  const filledBars = activeIndex * barLength
 
-                return (
-                  <div
-                    key={index}
-                    className={`w-1 h-6 rounded-full transition-all duration-300 ${
-                      index - barLength <= filledBars
-                        ? 'bg-accent'
-                        : 'bg-base-300'
-                    }`}
-                  />
-                )
-              },
-            )}
-          </div>
-        </Card>
+                  return (
+                    <div
+                      key={index}
+                      className={`w-1 h-6 rounded-full transition-all duration-300 ${
+                        index - barLength <= filledBars
+                          ? 'bg-accent'
+                          : 'bg-base-300'
+                      }`}
+                    />
+                  )
+                },
+              )}
+            </div>
+          </Card>
+        )}
       </div>
     </>
   )
