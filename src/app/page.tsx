@@ -1,8 +1,9 @@
-import { getContactContent, getHomeContent } from "../lib/cms"
-import Features from "./home/Features"
-import Gallery from "./home/Gallery"
-import Hero from "./home/Hero"
-import Steps from "./home/Steps"
+import { getContactContent, getHomeContent } from '../lib/cms'
+import Features from './home/Features'
+import Gallery from './home/Gallery'
+import Hero from './home/Hero'
+import Product from './home/Product'
+import Steps from './home/Steps'
 
 export default function HomePage() {
   const home = getHomeContent()
@@ -14,6 +15,7 @@ export default function HomePage() {
       <Features {...home} />
       <Steps {...home} />
       <Gallery {...home} />
+      <Product {...home} />
     </main>
   )
 }

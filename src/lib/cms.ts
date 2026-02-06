@@ -1,4 +1,4 @@
-import content from "../data/content.json"
+import content from '../data/content.json'
 
 export type NavigationItem = {
   label: string
@@ -14,7 +14,7 @@ export type HeaderContent = {
     label: string
     href: string
   }
-  navigation: NavigationItem[],
+  navigation: NavigationItem[]
   projectCounter: number
 }
 
@@ -29,7 +29,7 @@ export type HeroSection = {
   ctaPrimary?: {
     label: string
     href: string
-  },
+  }
   tags: string[]
 }
 

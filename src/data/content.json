@@ -190,6 +190,26 @@
           "src": "/assets/process-gallery/card-5.png"
         }
       ]
+    },
+    "product": {
+      "hero": "/assets/product/hero.png",
+      "cards": [
+        {
+          "image": "/assets/product/image-1.png",
+          "title": "Продукт, готовый к использованию",
+          "caption": "без прототипов и концепций."
+        },
+        {
+          "image": "/assets/product/image-2.png",
+          "title": "Понимание, как работает решение",
+          "caption": "и из каких частей оно состоит."
+        },
+        {
+          "image": "/assets/product/image-3.png",
+          "title": "Четкое представление о развитии",
+          "caption": "что улучшать и как масштабировать."
+        }
+      ]
     }
   },
   "about": {

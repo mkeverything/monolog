@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { motion } from "framer-motion"
+import { motion } from 'framer-motion'
 
 export function AnimatedBadge({ children, className }: AnimatedBadgeProps) {
   return (
@@ -8,12 +8,12 @@ export function AnimatedBadge({ children, className }: AnimatedBadgeProps) {
       className={`badge ${className}`}
       initial={false}
       whileHover={{
-        backgroundColor: "var(--color-accent)",
-        color: "var(--color-base-100)",
+        backgroundColor: 'var(--color-accent)',
+        color: 'var(--color-base-100)',
       }}
       transition={{
         duration: 0.3,
-        ease: "easeOut",
+        ease: 'easeOut',
       }}
     >
       {children}

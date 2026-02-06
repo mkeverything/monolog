@@ -21,6 +21,7 @@ npm run lint             # Run ESLint
 ## Code Style Guidelines
 
 ### Formatting (Prettier)
+
 ```json
 {
   "semi": false,
@@ -30,6 +31,7 @@ npm run lint             # Run ESLint
 ```
 
 ### Imports Order
+
 1. React/Next.js imports
 2. Third-party libraries
 3. Local components
@@ -37,13 +39,14 @@ npm run lint             # Run ESLint
 5. Styles
 
 ```typescript
-import { useState } from "react"
-import { ChevronLeft } from "lucide-react"
-import { Button } from "../components/ui/Button"
-import { cn } from "../lib/utils"
+import { useState } from 'react'
+import { ChevronLeft } from 'lucide-react'
+import { Button } from '../components/ui/Button'
+import { cn } from '../lib/utils'
 ```
 
 ### Naming Conventions
+
 - **Components:** PascalCase (e.g., `Button`, `Header`)
 - **Props Interfaces:** ComponentName + "Props" (e.g., `ButtonProps`)
 - **Functions/Variables:** camelCase
@@ -52,6 +55,7 @@ import { cn } from "../lib/utils"
 - **CSS classes:** kebab-case
 
 ### TypeScript Guidelines
+
 - Use strict TypeScript configuration
 - Define interfaces for all component props
 - Use `type` for unions/intersections, `interface` for object shapes
@@ -65,10 +69,11 @@ interface ButtonProps {
   onClick?: () => void
 }
 
-type ButtonVariant = "primary" | "secondary" | "outline"
+type ButtonVariant = 'primary' | 'secondary' | 'outline'
 ```
 
 ### Component Structure
+
 ```typescript
 "use client"
 
@@ -87,6 +92,7 @@ export function ComponentName({ prop1, prop2 }: ComponentProps) {
 ```
 
 ### Styling Guidelines
+
 - Use Tailwind CSS utility classes
 - Use DaisyUI component classes (`btn`, `card`, `badge`)
 - Use custom `cn()` utility for conditional class merging
@@ -100,6 +106,7 @@ className={cn("base-styles", variantStyles[variant], className)}
 ```
 
 ### File Organization
+
 ```
 src/
 ├── app/                    # Next.js App Router
@@ -120,20 +127,23 @@ src/
 ### Key Patterns
 
 **Client Components:**
+
 ```typescript
-"use client"
-import { useState } from "react"
+'use client'
+import { useState } from 'react'
 ```
 
 **Class Variance:**
+
 ```typescript
 const variantStyles: Record<ButtonVariant, string> = {
-  primary: "bg-primary text-base-100",
-  secondary: "bg-secondary text-secondary-content",
+  primary: 'bg-primary text-base-100',
+  secondary: 'bg-secondary text-secondary-content',
 }
 ```
 
 **Image Component:**
+
 ```typescript
 import Image from "next/image"
 <Image src={src} alt={alt} fill className="object-cover" sizes="..." />
@@ -142,9 +152,10 @@ import Image from "next/image"
 ### Common Utilities
 
 **cn() - Class Name Merger:**
+
 ```typescript
-import { clsx, type ClassValue } from "clsx"
-import { twMerge } from "tailwind-merge"
+import { clsx, type ClassValue } from 'clsx'
+import { twMerge } from 'tailwind-merge'
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -152,11 +163,13 @@ export function cn(...inputs: ClassValue[]) {
 ```
 
 ### ESLint Configuration
+
 - Next.js core web vitals + TypeScript presets
 - Located in `eslint.config.mjs`
 - Ignores: `.next/`, `out/`, `build/`, `next-env.d.ts`
 
 ### Best Practices
+
 - Use semantic HTML and aria-labels for accessibility
 - Use Next.js Image component for optimization
 - Use `"use client"` only when using React hooks
@@ -165,6 +178,7 @@ export function cn(...inputs: ClassValue[]) {
 - Follow conventional commit messages
 
 ### Resources
+
 - Content: `src/data/content.json`
 - Assets: `public/` directory
 - DaisyUI docs: https://daisyui.com/components/

@@ -1,38 +1,38 @@
-import { cn } from "../../lib/utils"
+import { cn } from '../../lib/utils'
 
-interface CardProps {
+export interface CardProps {
   children: React.ReactNode
   className?: string
-  variant?: "default" | "outline" | "elevated"
-  padding?: "none" | "sm" | "md" | "lg"
+  variant?: 'default' | 'outline' | 'elevated'
+  padding?: 'none' | 'sm' | 'md' | 'lg'
 }
 
 const variantStyles = {
-  default: "bg-neutral",
-  outline: "bg-transparent border-2 border-base-300",
-  elevated: "bg-neutral shadow-lg border border-base-300",
+  default: 'bg-neutral',
+  outline: 'bg-transparent border-2 border-base-300',
+  elevated: 'bg-neutral shadow-lg border border-base-300',
 }
 
 const paddingStyles = {
-  none: "",
-  sm: "p-4",
-  md: "p-6",
-  lg: "p-8",
+  none: '',
+  sm: 'p-4',
+  md: 'p-6',
+  lg: 'p-8',
 }
 
 export function Card({
   children,
   className,
-  variant = "default",
-  padding = "md",
+  variant = 'default',
+  padding = 'md',
 }: CardProps) {
   return (
     <div
       className={cn(
-        "rounded-box transition-all duration-300",
+        'rounded-box transition-all duration-300',
         variantStyles[variant],
         paddingStyles[padding],
-        className
+        className,
       )}
     >
       {children}
@@ -46,11 +46,7 @@ interface CardHeaderProps {
 }
 
 export function CardHeader({ children, className }: CardHeaderProps) {
-  return (
-    <div className={cn("mb-4", className)}>
-      {children}
-    </div>
-  )
+  return <div className={cn('mb-4', className)}>{children}</div>
 }
 
 interface CardTitleProps {
@@ -60,9 +56,7 @@ interface CardTitleProps {
 
 export function CardTitle({ children, className }: CardTitleProps) {
   return (
-    <h3 className={cn("text-lg text-base-content", className)}>
-      {children}
-    </h3>
+    <h3 className={cn('text-base-content text-lg', className)}>{children}</h3>
   )
 }
 
@@ -72,11 +66,7 @@ interface CardDescriptionProps {
 }
 
 export function CardDescription({ children, className }: CardDescriptionProps) {
-  return (
-    <p className={cn("text-xs", className)}>
-      {children}
-    </p>
-  )
+  return <p className={cn('text-xs', className)}>{children}</p>
 }
 
 interface CardContentProps {
@@ -85,7 +75,7 @@ interface CardContentProps {
 }
 
 export function CardContent({ children, className }: CardContentProps) {
-  return <div className={cn("", className)}>{children}</div>
+  return <div className={cn('', className)}>{children}</div>
 }
 
 interface CardFooterProps {
@@ -95,7 +85,7 @@ interface CardFooterProps {
 
 export function CardFooter({ children, className }: CardFooterProps) {
   return (
-    <div className={cn("mt-4 pt-4 border-t border-base-300", className)}>
+    <div className={cn('border-base-300 mt-4 border-t pt-4', className)}>
       {children}
     </div>
   )

@@ -1,4 +1,4 @@
-import { HTMLAttributes } from "react"
+import { HTMLAttributes } from 'react'
 
 export function Badge({ children, className, props }: BadgeProps) {
   return (

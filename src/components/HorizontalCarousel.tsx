@@ -76,21 +76,21 @@ export function HorizontalCarousel({
 
   return (
     <>
-      <div className='relative w-full flex flex-col'>
+      <div className='relative flex w-full flex-col'>
         {/* Horizontal Carousel - Single centered item */}
-        <div className='relative flex-1 w-full flex items-center justify-center'>
+        <div className='relative flex w-full flex-1 items-center justify-center'>
           <div
             ref={carouselRef}
-            className='carousel w-full max-w-md h-full overflow-x-auto snap-x snap-mandatory flex items-center'
+            className='carousel flex h-full w-full max-w-md snap-x snap-mandatory items-center overflow-x-auto'
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {images.map((image, index) => (
               <div
                 key={index}
-                className='carousel-item snap-center shrink-0 w-full h-full flex gap-8 flex-col items-center justify-center'
+                className='carousel-item flex h-full w-full shrink-0 snap-center flex-col items-center justify-center gap-8'
               >
-                <Card className='relative p-0 w-full h-48 flex rounded-box overflow-hidden'>
-                  <Badge className='bg-primary text-primary-content rounded-full size-6 text-xs absolute left-4 top-4'>
+                <Card className='rounded-box relative flex h-48 w-full overflow-hidden p-0'>
+                  <Badge className='bg-primary text-primary-content absolute top-4 left-4 size-6 rounded-full text-xs'>
                     {image.number}
                   </Badge>
                   <Image
@@ -98,10 +98,10 @@ export function HorizontalCarousel({
                     alt={image.alt}
                     width={1024}
                     height={1024}
-                    className='object-cover mx-26'
+                    className='mx-26 object-cover'
                   />
                 </Card>
-                <div className='text-center flex flex-col gap-4 max-w-86'>
+                <div className='flex max-w-86 flex-col gap-4 text-center'>
                   <div className='text-xl'>{data.steps[index].title}</div>
                   <div className='text-sm'>{data.steps[index].description}</div>
                 </div>
@@ -112,10 +112,10 @@ export function HorizontalCarousel({
       </div>
 
       {/* Progress Bar - Full width with equal gaps */}
-      <div className='w-full flex flex-col gap-2 absolute bottom-4 mt-6'>
-        <div className='flex justify-between w-full'>
+      <div className='absolute bottom-4 mt-6 flex w-full flex-col gap-2'>
+        <div className='flex w-full justify-between'>
           <div className='pl-4'>
-            <span className='text-4xl font-semibold text-left'>
+            <span className='text-left text-4xl font-semibold'>
               {progressPercentage}
             </span>
             <span className='text-3xl'>%</span>
@@ -123,17 +123,17 @@ export function HorizontalCarousel({
           <Button
             size='sm'
             variant='secondary'
-            className='p-1 h-fit text-primary font-normal bg-neutral'
+            className='text-primary bg-neutral h-fit p-1 font-normal'
           >
             <span className='px-2'>{data.cta}</span>
-            <Badge className='rounded-full size-6 p-1 bg-secondary text-xl'>
+            <Badge className='bg-secondary size-6 rounded-full p-1 text-xl'>
               <ArrowRight />
             </Badge>
           </Button>
         </div>
         {mounted && (
-          <Card className='py-2 px-4'>
-            <div className='w-full flex gap-1 justify-between'>
+          <Card className='px-4 py-2'>
+            <div className='flex w-full justify-between gap-1'>
               {Array.from({ length: images.length * barLength }).map(
                 (_, index) => {
                   const filledBars = activeIndex * barLength
@@ -141,7 +141,7 @@ export function HorizontalCarousel({
                   return (
                     <div
                       key={index}
-                      className={`w-1 h-6 rounded-full transition-all duration-300 ${
+                      className={`h-6 w-1 rounded-full transition-all duration-300 ${
                         index - barLength <= filledBars
                           ? 'bg-accent'
                           : 'bg-base-300'
