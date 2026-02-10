@@ -25,7 +25,7 @@ export default function Conditions(home: SiteContent['home']) {
             className='flex flex-col overflow-hidden p-2'
           >
             <div className='relative h-48 w-full'>
-              <Card className='bg-base-300 flex size-full justify-between rounded-2xl'>
+              <Card className='bg-base-300 flex size-full justify-between rounded-2xl p-4'>
                 <div className='flex size-full flex-col justify-between'>
                   <Badge className='bg-secondary rounded-sm border-none text-xs'>
                     {card.terms}
@@ -55,28 +55,27 @@ export default function Conditions(home: SiteContent['home']) {
             </div>
           </Card>
         ))}
+        <Card className='lg:col-span-3'>
+          <CardHeader>
+            <div className='flex items-center gap-2'>
+              <CardTitle>{conditions.support.title}</CardTitle>
+              <Badge className='bg-secondary text-secondary-content rounded-full text-xs'>
+                {conditions.support.label}
+              </Badge>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <div className='grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3'>
+              {conditions.support.checkpoints.map((checkpoint, index) => (
+                <div key={index} className='flex items-start gap-2'>
+                  <Check className='mt-0.5 h-4 w-4 shrink-0 text-green-500' />
+                  <span className='text-sm'>{checkpoint}</span>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
       </div>
-
-      <Card variant='elevated' className='mt-8'>
-        <CardHeader>
-          <div className='flex items-center gap-2'>
-            <CardTitle>{conditions.support.title}</CardTitle>
-            <Badge className='bg-secondary text-secondary-content rounded-full text-xs'>
-              {conditions.support.label}
-            </Badge>
-          </div>
-        </CardHeader>
-        <CardContent>
-          <div className='grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3'>
-            {conditions.support.checkpoints.map((checkpoint, index) => (
-              <div key={index} className='flex items-start gap-2'>
-                <Check className='mt-0.5 h-4 w-4 shrink-0 text-green-500' />
-                <span className='text-sm'>{checkpoint}</span>
-              </div>
-            ))}
-          </div>
-        </CardContent>
-      </Card>
 
       <p className='text-base-content/60 mt-8 text-center text-sm'>
         {conditions.disclaimer}
