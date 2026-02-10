@@ -55,7 +55,7 @@ function ShowcaseCard({
   return (
     <motion.div
       className={cn(
-        'absolute inset-0 flex items-center justify-center p-8 py-16',
+        'absolute inset-0 flex items-center justify-center p-16 py-32',
       )}
       style={{
         y,
@@ -93,13 +93,13 @@ export default function Showcases({ showcases }: ShowcasesProps) {
   const images = showcases.images || []
 
   return (
-    <FullPageSection className='relative overflow-hidden p-0!'>
+    <FullPageSection id='showcases' className='relative overflow-hidden'>
       <div className='absolute top-0 z-20 flex items-center justify-center'>
         <span className='text-xl font-medium'>{showcases.title}</span>
       </div>
       <div
         ref={containerRef}
-        className='relative h-[400vh] w-full'
+        className='relative h-[175vh] w-full'
         style={{ marginTop: '-50vh' }}
       >
         <div className='sticky top-0 h-screen w-full overflow-hidden'>
