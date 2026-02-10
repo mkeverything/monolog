@@ -29,7 +29,7 @@ export function Card({
   return (
     <div
       className={cn(
-        'rounded-box transition-all duration-300',
+        'rounded-3xl transition-all duration-300',
         variantStyles[variant],
         paddingStyles[padding],
         className,

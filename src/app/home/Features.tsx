@@ -20,7 +20,7 @@ export default function Features(home: SiteContent['home']) {
           <Card
             key={feature.title}
             variant='default'
-            className='flex h-40 flex-col justify-between'
+            className='flex h-40 flex-col justify-between rounded-2xl'
           >
             <CardHeader className='flex w-full justify-between'>
               <CardTitle>{feature.title}</CardTitle>

@@ -6,7 +6,7 @@ import { FC } from 'react'
 
 export default function Product({ product }: SiteContent['home']) {
   return (
-    <FullPageSection className='p-0!'>
+    <FullPageSection id='product' className='p-0!'>
       <span className='flex h-32 items-center text-xl'>{product.title}</span>
       <div className='relative flex h-full items-center justify-center overflow-hidden'>
         <Image
@@ -31,7 +31,7 @@ const FloatingCard: FC<FloatingCardProps> = ({ card, coordinates }) => {
   return (
     <Card
       variant='elevated'
-      className={`bg-base-100 absolute z-20 flex gap-2 rounded-2xl! p-2 ${coordinates}`}
+      className={`bg-base-100 absolute z-20 flex gap-2 rounded-xl! p-2 pr-4 ${coordinates}`}
     >
       <Image
         src={card.image}

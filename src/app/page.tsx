@@ -1,4 +1,5 @@
 import { getContactContent, getHomeContent } from '../lib/cms'
+import Conditions from './home/Conditions'
 import Features from './home/Features'
 import Gallery from './home/Gallery'
 import Hero from './home/Hero'
@@ -18,6 +19,7 @@ export default function HomePage() {
       <Gallery {...home} />
       <Product {...home} />
       <Showcases {...home} />
+      <Conditions {...home} />
     </main>
   )
 }
