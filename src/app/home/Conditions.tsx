@@ -22,7 +22,7 @@ export default function Conditions(home: SiteContent['home']) {
           <Card
             key={card.title}
             variant='default'
-            className='flex flex-col overflow-hidden p-2'
+            className='flex flex-col overflow-hidden p-2 gap-8'
           >
             <div className='relative h-48 w-full'>
               <Card className='bg-base-300 flex size-full justify-between rounded-2xl p-4'>
@@ -45,21 +45,21 @@ export default function Conditions(home: SiteContent['home']) {
             <CardContent className='flex flex-1 flex-col gap-3'>
               {card.checkpoints.map((checkpoint, index) => (
                 <div key={index} className='flex items-start gap-2'>
-                  <Check className='mt-0.5 h-4 w-4 shrink-0 text-green-500' />
+                  <Check className='mt-0.5 h-4 w-4 shrink-0 text-accent' />
                   <span className='text-sm'>{checkpoint}</span>
                 </div>
               ))}
             </CardContent>
-            <div className='p-6 pt-0'>
+            <div className='p-6'>
               <Button className='w-full rounded-full'>{card.cta}</Button>
             </div>
           </Card>
         ))}
         <Card className='lg:col-span-3'>
           <CardHeader>
-            <div className='flex items-center gap-2'>
+            <div className='flex items-center gap-2 justify-between w-full'>
               <CardTitle>{conditions.support.title}</CardTitle>
-              <Badge className='bg-secondary text-secondary-content rounded-full text-xs'>
+              <Badge className='bg-secondary text-secondary-content rounded-md text-xs'>
                 {conditions.support.label}
               </Badge>
             </div>
@@ -68,7 +68,7 @@ export default function Conditions(home: SiteContent['home']) {
             <div className='grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3'>
               {conditions.support.checkpoints.map((checkpoint, index) => (
                 <div key={index} className='flex items-start gap-2'>
-                  <Check className='mt-0.5 h-4 w-4 shrink-0 text-green-500' />
+                  <Check className='mt-0.5 h-4 w-4 shrink-0 text-accent' />
                   <span className='text-sm'>{checkpoint}</span>
                 </div>
               ))}
