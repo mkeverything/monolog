@@ -27,7 +27,7 @@ export function FullPageSection({
     <section
       id={id}
       className={cn(
-        'h-screen w-full p-4 sm:p-6',
+        'min-h-dvh w-full p-4 sm:p-6',
         backgroundStyles[background],
         className,
         centered && 'flex flex-col items-center justify-center',

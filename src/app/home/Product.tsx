@@ -8,7 +8,7 @@ export default function Product({ product }: SiteContent['home']) {
   return (
     <FullPageSection id='product' className='p-0!'>
       <span className='flex h-32 items-center text-xl'>{product.title}</span>
-      <div className='relative flex h-full items-center justify-center overflow-hidden'>
+      <div className='relative flex min-h-full flex-1 items-center justify-center overflow-hidden'>
         <Image
           className='z-10 m-auto max-w-[75%]'
           src={product.hero}

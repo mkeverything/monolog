@@ -8,7 +8,7 @@ import Image from 'next/image'
 export default function Steps(home: SiteContent['home']) {
   return (
     <FullPageSection id='steps'>
-      <div className='mt-12 grid size-full grid-cols-1 gap-2 sm:mt-16 md:grid-cols-2 lg:grid-cols-5 lg:grid-rows-2'>
+      <div className='mt-12 grid min-h-full w-full flex-1 grid-cols-1 gap-2 sm:mt-16 md:grid-cols-2 lg:grid-cols-5 lg:grid-rows-2'>
         <Card className='flex w-full flex-col justify-between overflow-hidden px-0 lg:col-start-1 lg:col-end-4'>
           <CardTitle className='px-4'>{home.steps.developing.title}</CardTitle>
           <CardContent className='relative'>

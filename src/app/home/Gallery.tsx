@@ -48,7 +48,7 @@ export default function Gallery(home: SiteContent['home']) {
     <FullPageSection id='gallery'>
       <div
         ref={sectionRef}
-        className='relative flex h-full w-full flex-col items-center justify-center gap-8'
+        className='relative flex min-h-full w-full flex-col items-center justify-center gap-8'
       >
         <h2 className='text-primary text-xl font-medium'>
           {home.workflow.title}
