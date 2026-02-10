@@ -192,6 +192,7 @@
       ]
     },
     "product": {
+      "title": "Что вы получаете после",
       "hero": "/assets/product/hero.png",
       "cards": [
         {
