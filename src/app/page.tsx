@@ -3,6 +3,7 @@ import Features from './home/Features'
 import Gallery from './home/Gallery'
 import Hero from './home/Hero'
 import Product from './home/Product'
+import Showcases from './home/Showcases'
 import Steps from './home/Steps'
 
 export default function HomePage() {
@@ -16,6 +17,7 @@ export default function HomePage() {
       <Steps {...home} />
       <Gallery {...home} />
       <Product {...home} />
+      <Showcases {...home} />
     </main>
   )
 }

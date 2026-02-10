@@ -211,6 +211,15 @@
           "caption": "что улучшать и как масштабировать."
         }
       ]
+    },
+    "showcases": {
+      "title": "Реализованные решения",
+      "images": [
+        "/assets/showcases/image-1.png",
+        "/assets/showcases/image-2.png",
+        "/assets/showcases/image-3.png",
+        "/assets/showcases/image-4.png"
+      ]
     }
   },
   "about": {
