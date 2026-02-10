@@ -4,6 +4,7 @@ import Features from './home/Features'
 import Gallery from './home/Gallery'
 import Hero from './home/Hero'
 import Product from './home/Product'
+import Roles from './home/Roles'
 import Showcases from './home/Showcases'
 import Steps from './home/Steps'
 
@@ -20,6 +21,7 @@ export default function HomePage() {
       <Product {...home} />
       <Showcases {...home} />
       <Conditions {...home} />
+      <Roles roles={home.roles} />
     </main>
   )
 }

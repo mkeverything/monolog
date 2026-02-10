@@ -277,6 +277,61 @@
         ]
       },
       "disclaimer": "Финальная стоимость зависит от сложности сценариев, формата продукта и числа интеграций. Точную оценку формируем после консультации."
+    },
+    "roles": {
+      "title": "Кто работает над вашим продуктом",
+      "caption": "В проекте участвуют только необходимые роли, без лишних уровней и перегруза.",
+      "hiddenCount": 2,
+      "team": [
+        {
+          "role": "Project Manager",
+          "image": "/assets/roles/project-manager.png"
+        },
+        {
+          "role": "Product Manager",
+          "image": "/assets/roles/product-manager.png"
+        },
+        {
+          "role": "Designer Senior",
+          "image": "/assets/roles/designer-senior.png"
+        },
+        {
+          "role": "Analytics",
+          "image": "/assets/roles/analytics.png"
+        },
+        {
+          "role": "Team Lead Senior",
+          "image": "/assets/roles/team-lead-senior.png"
+        },
+        {
+          "role": "Frontend Senior",
+          "image": "/assets/roles/frontend-senior.png"
+        },
+        {
+          "role": "Frontend Middle",
+          "image": "/assets/roles/frontend-middle.png"
+        },
+        {
+          "role": "Frontend Junior",
+          "image": "/assets/roles/frontend-junior.png"
+        },
+        {
+          "role": "Backend Senior",
+          "image": "/assets/roles/backend-senior.png"
+        },
+        {
+          "role": "Backend Middle",
+          "image": "/assets/roles/backend-middle.png"
+        },
+        {
+          "role": "DevOps Middle",
+          "image": "/assets/roles/devops-middle.png"
+        },
+        {
+          "role": "QA Engineer Middle",
+          "image": "/assets/roles/qa-engineer-middle.png"
+        }
+      ]
     }
   },
   "about": {
