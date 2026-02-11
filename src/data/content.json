@@ -338,8 +338,7 @@
       "title": "Начнём с разбора задачи",
       "caption": "Мы разберем задачу, предложим формат решения и дадим предварительную оценку сроков и бюджета.",
       "cta": "Обсудить задачу",
-      "hero": "/assets/discuss-hero.png",
-      "heroMobile": "/assets/discuss-hero-mobile.png"
+      "hero": "/assets/discuss-hero.png"
     },
     "faq": {
       "title": "FAQ",
@@ -367,63 +366,7 @@
       ]
     }
   },
-  "about": {
-    "hero": {
-      "title": "About Monolog",
-      "subtitle": "We're building the future of creative expression"
-    },
-    "mission": {
-      "title": "Our Mission",
-      "content": "To empower creators worldwide with tools that amplify their voice and connect them with audiences who care."
-    },
-    "team": {
-      "title": "Meet the Team",
-      "members": [
-        {
-          "name": "Alex Rivera",
-          "role": "Founder & CEO",
-          "bio": "Visionary leader with 10+ years in tech"
-        },
-        {
-          "name": "Jordan Smith",
-          "role": "Head of Design",
-          "bio": "Award-winning designer passionate about UX"
-        },
-        {
-          "name": "Taylor Kim",
-          "role": "Lead Developer",
-          "bio": "Full-stack expert and open source contributor"
-        },
-        {
-          "name": "Morgan Lee",
-          "role": "Content Director",
-          "bio": "Storyteller and community builder"
-        }
-      ]
-    },
-    "values": {
-      "title": "Our Values",
-      "items": [
-        {
-          "title": "Creativity First",
-          "description": "We believe everyone has a story worth telling"
-        },
-        {
-          "title": "User Centered",
-          "description": "Every feature is designed with our users in mind"
-        },
-        {
-          "title": "Open & Transparent",
-          "description": "We build in public and value honest feedback"
-        }
-      ]
-    }
-  },
   "contact": {
-    "hero": {
-      "title": "Get in Touch",
-      "subtitle": "We'd love to hear from you. Reach out and let's create something amazing together."
-    },
     "contactInfo": {
       "title": "Контакты",
       "contacts": [
@@ -448,30 +391,6 @@
           "value": "hello@monolog.com"
         }
       ]
-    },
-    "form": {
-      "title": "Send a Message",
-      "fields": [
-        {
-          "name": "name",
-          "label": "Name",
-          "type": "text",
-          "required": true
-        },
-        {
-          "name": "email",
-          "label": "Email",
-          "type": "email",
-          "required": true
-        },
-        {
-          "name": "message",
-          "label": "Message",
-          "type": "textarea",
-          "required": true
-        }
-      ],
-      "submitLabel": "Send Message"
     }
   }
 }
