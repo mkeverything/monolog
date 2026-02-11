@@ -22,7 +22,7 @@ export default function Conditions(home: SiteContent['home']) {
           <Card
             key={card.title}
             variant='default'
-            className='flex flex-col overflow-hidden p-2 gap-8'
+            className='flex flex-col gap-8 overflow-hidden p-2'
           >
             <div className='relative h-48 w-full'>
               <Card className='bg-base-300 flex size-full justify-between rounded-2xl p-4'>
@@ -45,7 +45,7 @@ export default function Conditions(home: SiteContent['home']) {
             <CardContent className='flex flex-1 flex-col gap-3'>
               {card.checkpoints.map((checkpoint, index) => (
                 <div key={index} className='flex items-start gap-2'>
-                  <Check className='mt-0.5 h-4 w-4 shrink-0 text-accent' />
+                  <Check className='text-accent mt-0.5 h-4 w-4 shrink-0' />
                   <span className='text-sm'>{checkpoint}</span>
                 </div>
               ))}
@@ -57,7 +57,7 @@ export default function Conditions(home: SiteContent['home']) {
         ))}
         <Card className='lg:col-span-3'>
           <CardHeader>
-            <div className='flex items-center gap-2 justify-between w-full'>
+            <div className='flex w-full items-center justify-between gap-2'>
               <CardTitle>{conditions.support.title}</CardTitle>
               <Badge className='bg-secondary text-secondary-content rounded-md text-xs'>
                 {conditions.support.label}
@@ -68,7 +68,7 @@ export default function Conditions(home: SiteContent['home']) {
             <div className='grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3'>
               {conditions.support.checkpoints.map((checkpoint, index) => (
                 <div key={index} className='flex items-start gap-2'>
-                  <Check className='mt-0.5 h-4 w-4 shrink-0 text-accent' />
+                  <Check className='text-accent mt-0.5 h-4 w-4 shrink-0' />
                   <span className='text-sm'>{checkpoint}</span>
                 </div>
               ))}
