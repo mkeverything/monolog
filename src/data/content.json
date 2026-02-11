@@ -28,27 +28,6 @@
     },
     "projectCounter": 20
   },
-  "footer": {
-    "copyright": "© 2026 Monolog. All rights reserved.",
-    "links": [
-      {
-        "label": "Privacy",
-        "href": "#"
-      },
-      {
-        "label": "Terms",
-        "href": "#"
-      },
-      {
-        "label": "Twitter",
-        "href": "#"
-      },
-      {
-        "label": "GitHub",
-        "href": "#"
-      }
-    ]
-  },
   "home": {
     "hero": {
       "title": "Разработка IT-продуктов под ключ",
@@ -389,6 +368,63 @@
           "type": "email",
           "label": "е.",
           "value": "hello@monolog.com"
+        }
+      ]
+    }
+  },
+  "footer": {
+    "title": "MONOLOG",
+    "copyright": "© 2026 Monolog. All rights reserved.",
+    "legal": {
+      "name": "ИП Кучеров Дарий Владимирович",
+      "tax": "ИНН 920459459734",
+      "orgnip": "ОГРНИП 325920000017300"
+    },
+    "cta": {
+      "caption": "Задача не укладывается в готовые форматы? \nДавайте обсудим ее отдельно.",
+      "button": "Написать"
+    },
+    "links": [
+      {
+        "label": "Политика конфиденциальности",
+        "href": "#"
+      },
+      {
+        "label": "Пользовательское соглашение",
+        "href": "#"
+      }
+    ],
+    "external": {
+      "title": "s.",
+      "items": [
+        {
+          "label": "Instagram",
+          "href": ""
+        },
+        {
+          "label": "Telegram",
+          "href": ""
+        },
+        {
+          "label": "Дзен",
+          "href": ""
+        },
+        {
+          "label": "vc.ru",
+          "href": ""
+        }
+      ]
+    },
+    "contacts": {
+      "title": "c.",
+      "items": [
+        {
+          "type": "telephone",
+          "value": "+7 980 188 6009"
+        },
+        {
+          "type": "email",
+          "value": "monolog@agency.com"
         }
       ]
     }
