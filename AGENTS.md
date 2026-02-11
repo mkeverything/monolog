@@ -16,7 +16,15 @@ npm run lint             # Run ESLint
 - **Framework:** Next.js 16 (App Router) + React 19
 - **Language:** TypeScript (strict mode)
 - **Styling:** Tailwind CSS v4 + DaisyUI
+- **Animation:** Framer Motion (scroll-based animations)
+- **Icons:** Lucide React
 - **Package Manager:** npm
+
+### Additional Dependencies
+
+- `framer-motion` - Scroll animations and transitions
+- `react-responsive` - Responsive breakpoints (if needed)
+- `lucide-react` - Icon library
 
 ## Code Style Guidelines
 
@@ -34,15 +42,15 @@ npm run lint             # Run ESLint
 
 1. React/Next.js imports
 2. Third-party libraries
-3. Local components
-4. Local utilities/hooks
+3. Local components (use `@/src/` alias)
+4. Local utilities/hooks (use `@/src/` alias)
 5. Styles
 
 ```typescript
 import { useState } from 'react'
 import { ChevronLeft } from 'lucide-react'
-import { Button } from '../components/ui/Button'
-import { cn } from '../lib/utils'
+import { Button } from '@/src/components/ui/Button'
+import { cn } from '@/src/lib/utils'
 ```
 
 ### Naming Conventions
@@ -94,12 +102,13 @@ export function ComponentName({ prop1, prop2 }: ComponentProps) {
 ### Styling Guidelines
 
 - Use Tailwind CSS utility classes
-- Use DaisyUI component classes (`btn`, `card`, `badge`)
+- Use DaisyUI component classes (`btn`, `card`, `badge`, `collapse`, `join`)
 - Use custom `cn()` utility for conditional class merging
 - **Design system:**
   - Buttons: `rounded-full` (pill shape)
-  - Cards: `rounded-box`
+  - Cards: `rounded-box` or `rounded-2xl`
   - DaisyUI theme: primary (black), secondary (gray), accent (orange)
+  - Responsive sections: `min-h-dvh` (allows content to expand beyond viewport)
 
 ```typescript
 className={cn("base-styles", variantStyles[variant], className)}
@@ -110,15 +119,35 @@ className={cn("base-styles", variantStyles[variant], className)}
 ```
 src/
 ├── app/                    # Next.js App Router
-│   ├── page.tsx           # Pages
-│   ├── layout.tsx         # Layouts
-│   └── globals.css        # Global styles + theme
+│   ├── page.tsx           # Home page with sections
+│   ├── layout.tsx         # Root layout
+│   ├── globals.css        # Global styles + theme
+│   ├── projects/          # Projects page
+│   ├── discuss/           # Discuss page
+│   ├── lab/               # Lab page
+│   └── home/              # Home page sections
+│       ├── Hero.tsx
+│       ├── Features.tsx
+│       ├── Steps.tsx
+│       ├── Gallery.tsx
+│       ├── Product.tsx
+│       ├── Showcases.tsx
+│       ├── Conditions.tsx
+│       ├── Roles.tsx
+│       ├── FAQ.tsx
+│       └── Discuss.tsx
 ├── components/
 │   ├── ui/                # Reusable UI components
-│   ├── Header.tsx         # Layout components
+│   │   ├── Button.tsx
+│   │   ├── Badge.tsx
+│   │   ├── AnimatedBadge.tsx
+│   │   └── Card.tsx
+│   ├── FullPageSection.tsx
+│   ├── HorizontalCarousel.tsx
+│   ├── Header.tsx
 │   └── Footer.tsx
 ├── lib/
-│   ├── cms.ts             # Content management
+│   ├── cms.ts             # Content management & types
 │   └── utils.ts           # cn() utility
 └── data/
     └── content.json       # Static content
@@ -147,6 +176,22 @@ const variantStyles: Record<ButtonVariant, string> = {
 ```typescript
 import Image from "next/image"
 <Image src={src} alt={alt} fill className="object-cover" sizes="..." />
+```
+
+**Framer Motion Animations:**
+
+```typescript
+'use client'
+import { motion, useScroll, useTransform } from 'framer-motion'
+
+// Scroll-based animations
+const { scrollYProgress } = useScroll({
+  target: containerRef,
+  offset: ['start start', 'end end'],
+})
+
+const y = useTransform(scrollYProgress, [0, 1], ['0%', '100%'])
+const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
 ```
 
 ### Common Utilities
