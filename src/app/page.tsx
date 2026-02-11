@@ -24,7 +24,7 @@ export default function HomePage() {
       <Showcases {...home} />
       <Conditions {...home} />
       <Roles roles={home.roles} />
-      <Discuss discuss={home.discuss} />
+      <Discuss />
       <FAQ {...home} />
     </main>
   )

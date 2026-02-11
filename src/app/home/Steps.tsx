@@ -158,7 +158,7 @@ export default function Steps(home: SiteContent['home']) {
         <Card className='relative flex size-full flex-col justify-between overflow-hidden px-0 lg:col-start-3 lg:col-end-6'>
           <CardContent className='flex h-full flex-col justify-between px-4'>
             <CardTitle>{home.steps.pricing.title}</CardTitle>
-            <div className='flex w-full gap-4'>
+            <div className='flex w-full gap-8'>
               <div className='flex size-full flex-col justify-end gap-4'>
                 <Badge className='badge-lg bg-primary text-primary-content w-1/2 justify-between text-xs'>
                   {home.steps.pricing.monolog}
