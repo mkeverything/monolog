@@ -332,6 +332,14 @@
           "image": "/assets/roles/qa-engineer-middle.png"
         }
       ]
+    },
+    "discuss": {
+      "badge": "ответим в течение 24 часов",
+      "title": "Начнём с разбора задачи",
+      "caption": "Мы разберем задачу, предложим формат решения и дадим предварительную оценку сроков и бюджета.",
+      "cta": "Обсудить задачу",
+      "hero": "/assets/discuss-hero.png",
+      "heroMobile": "/assets/discuss-hero-mobile.png"
     }
   },
   "about": {
