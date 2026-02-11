@@ -1,6 +1,6 @@
 import { cn } from '../../lib/utils'
 
-export interface CardProps {
+export type CardProps = {
   children: React.ReactNode
   className?: string
   variant?: 'default' | 'outline' | 'elevated'
@@ -40,7 +40,7 @@ export function Card({
   )
 }
 
-interface CardHeaderProps {
+type CardHeaderProps = {
   children: React.ReactNode
   className?: string
 }
@@ -49,7 +49,7 @@ export function CardHeader({ children, className }: CardHeaderProps) {
   return <div className={cn('mb-4', className)}>{children}</div>
 }
 
-interface CardTitleProps {
+type CardTitleProps = {
   children: React.ReactNode
   className?: string
 }
@@ -60,7 +60,7 @@ export function CardTitle({ children, className }: CardTitleProps) {
   )
 }
 
-interface CardDescriptionProps {
+type CardDescriptionProps = {
   children: React.ReactNode
   className?: string
 }
@@ -69,7 +69,7 @@ export function CardDescription({ children, className }: CardDescriptionProps) {
   return <p className={cn('text-xs', className)}>{children}</p>
 }
 
-interface CardContentProps {
+type CardContentProps = {
   children: React.ReactNode
   className?: string
 }
@@ -78,7 +78,7 @@ export function CardContent({ children, className }: CardContentProps) {
   return <div className={cn('', className)}>{children}</div>
 }
 
-interface CardFooterProps {
+type CardFooterProps = {
   children: React.ReactNode
   className?: string
 }

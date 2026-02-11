@@ -9,7 +9,7 @@ import { Badge } from './ui/Badge'
 import { Button } from './ui/Button'
 import { Card } from './ui/Card'
 
-interface HorizontalCarouselProps {
+type HorizontalCarouselProps = {
   data: SiteContent['home']['workflow']
   scrollProgress?: number
 }

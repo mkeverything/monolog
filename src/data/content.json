@@ -340,6 +340,31 @@
       "cta": "Обсудить задачу",
       "hero": "/assets/discuss-hero.png",
       "heroMobile": "/assets/discuss-hero-mobile.png"
+    },
+    "faq": {
+      "title": "FAQ",
+      "items": [
+        {
+          "q": "Работаете ли вы с готовыми продуктами?",
+          "a": "Мы не берем в работу уже существующие продукты. Работаем с идеей, задачей или новым решением с нуля."
+        },
+        {
+          "q": "Можно ли начать с небольшой версии?",
+          "a": "Наверное"
+        },
+        {
+          "q": "Нужно ли готовое техническое задание?",
+          "a": "Вероятно"
+        },
+        {
+          "q": "Занимаетесь ли вы SEO?",
+          "a": "Скорее всего"
+        },
+        {
+          "q": "Как происходит оплата?",
+          "a": "Деньгами"
+        }
+      ]
     }
   },
   "about": {
@@ -447,23 +472,6 @@
         }
       ],
       "submitLabel": "Send Message"
-    },
-    "faq": {
-      "title": "Frequently Asked Questions",
-      "items": [
-        {
-          "question": "How do I get started?",
-          "answer": "Simply sign up for an account and start creating your first story."
-        },
-        {
-          "question": "Is there a free plan?",
-          "answer": "Yes! We offer a generous free tier with all essential features."
-        },
-        {
-          "question": "Can I collaborate with others?",
-          "answer": "Absolutely. Our collaboration tools make teamwork seamless."
-        }
-      ]
     }
   }
 }

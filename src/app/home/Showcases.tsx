@@ -118,6 +118,6 @@ export default function Showcases({ showcases }: ShowcasesProps) {
   )
 }
 
-interface ShowcasesProps {
+type ShowcasesProps = {
   showcases: SiteContent['home']['showcases']
 }

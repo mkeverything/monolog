@@ -1,6 +1,6 @@
 import { cn } from '../lib/utils'
 
-interface FullPageSectionProps {
+type FullPageSectionProps = {
   children: React.ReactNode
   className?: string
   id?: string
@@ -38,7 +38,7 @@ export function FullPageSection({
   )
 }
 
-interface SectionTitleProps {
+type SectionTitleProps = {
   children: React.ReactNode
   className?: string
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
@@ -52,7 +52,7 @@ export function SectionTitle({
   return (
     <Component
       className={cn(
-        'text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl',
+        'text-xl font-semibold tracking-tight sm:text-2xl md:text-3xl',
         className,
       )}
     >
@@ -61,7 +61,7 @@ export function SectionTitle({
   )
 }
 
-interface SectionSubtitleProps {
+type SectionSubtitleProps = {
   children: React.ReactNode
   className?: string
 }

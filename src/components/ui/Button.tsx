@@ -4,7 +4,7 @@ import { cn } from '../../lib/utils'
 type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'accent'
 type ButtonSize = 'sm' | 'md' | 'lg'
 
-interface ButtonProps {
+type ButtonProps = {
   children: React.ReactNode
   variant?: ButtonVariant
   size?: ButtonSize

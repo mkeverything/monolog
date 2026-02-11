@@ -1,6 +1,7 @@
 import { getContactContent, getHomeContent } from '../lib/cms'
 import Conditions from './home/Conditions'
 import Discuss from './home/Discuss'
+import FAQ from './home/FAQ'
 import Features from './home/Features'
 import Gallery from './home/Gallery'
 import Hero from './home/Hero'
@@ -24,6 +25,7 @@ export default function HomePage() {
       <Conditions {...home} />
       <Roles roles={home.roles} />
       <Discuss discuss={home.discuss} />
+      <FAQ {...home}/>
     </main>
   )
 }
