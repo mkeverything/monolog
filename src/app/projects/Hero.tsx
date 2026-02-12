@@ -7,7 +7,9 @@ import { ProjectsProps } from './page'
 export default function Hero(projects: ProjectsProps) {
   return (
     <FullPageSection>
-      <Image src={projects.hero.image} fill alt='hero' />
+      <div className='h-full w-full p-8'>
+        <Image src={projects.hero.image} fill alt='hero' />
+      </div>
     </FullPageSection>
   )
 }

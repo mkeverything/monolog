@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import { Badge } from '@/src/components/ui/Badge'
 import { cn } from '@/src/lib/utils'
+import FrameOverlay from './FrameOverlay'
 
 export function ProjectCard({
   image,
@@ -20,18 +21,20 @@ export function ProjectCard({
   return (
     <div
       className={cn(
-        'flex h-90 w-auto flex-col overflow-hidden rounded-2xl',
+        'flex h-[90dvh] w-auto flex-col overflow-hidden rounded-2xl',
         className,
       )}
     >
       <div className='relative flex-95'>
-        <Image
-          src={image}
-          alt={title}
-          fill
-          className='object-cover'
-          sizes='(max-width: 768px) 100vw, 50vw'
-        />
+        <FrameOverlay>
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className='object-cover'
+            sizes='(max-width: 768px) 100vw, 50vw'
+          />
+        </FrameOverlay>
       </div>
       <div className='flex flex-5 flex-col justify-center gap-3 p-4'>
         <div className='flex items-center justify-between text-base'>

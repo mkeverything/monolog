@@ -5,7 +5,7 @@ import Projects from './Projects'
 export default function Page() {
   const { projects } = getSiteContent()
   return (
-    <main className='bg-white'>
+    <main className='p-4'>
       <Hero {...projects} />
       <Projects {...projects} />
     </main>
