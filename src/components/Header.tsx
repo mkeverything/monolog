@@ -30,7 +30,7 @@ export function Header() {
           {/* Desktop Navigation */}
           <nav
             role='tablist'
-            className='tabs tabs-box text-base-content hidden items-center space-x-8 bg-black md:flex'
+            className='tabs tabs-box text-base-content hidden items-center gap-2 bg-black md:flex'
           >
             {header.navigation.map((item) => (
               <Link

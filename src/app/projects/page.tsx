@@ -1,3 +1,9 @@
+import Hero from './Hero'
+
 export default function Page() {
-  return null
+  return (
+    <main className='bg-white'>
+      <Hero />
+    </main>
+  )
 }

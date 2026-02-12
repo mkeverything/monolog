@@ -12,7 +12,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' data-theme='light'>
-      <body className={`${inter.className} bg-neutral font-sansantialiased`}>
+      <body className={`${inter.className} font-sansantialiased`}>
         <div className='flex min-h-screen flex-col'>
           <Header />
           <div className='flex-1 pt-16 sm:pt-20'>{children}</div>

@@ -15,6 +15,7 @@ export default function Hero({
       id='hero'
       className='flex flex-col items-start'
     >
+      <div className='w-full absolute top-0 h-20 bg-neutral'/>
       <div className='mt-28 flex max-w-2/5 grow flex-col gap-2'>
         <div className='flex gap-3'>
           {home.hero.tags.map((tag) => (

@@ -11,7 +11,7 @@ export function Footer() {
     <footer className='bg-black text-white'>
       <div className='relative mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 xl:px-12'>
         {/* Top section with links and info */}
-        <div className='mb-16 grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-8'>
+        <div className='mb-16 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8'>
           {/* CTA Section */}
           <div className='space-y-4'>
             <p className='text-primary-content whitespace-pre-line'>
@@ -35,7 +35,7 @@ export function Footer() {
               <div className='grid grid-cols-2 gap-2'>
                 {footer.external.items.map((item) => (
                   <div key={item.label} className='flex items-center gap-2'>
-                    <div className='border-accent size-3 rounded-full border' />
+                    <div className='border-accent size-3 rounded-full border shrink-0' />
                     <Link href={item.href || '#'} className='text-sm'>
                       {item.label}
                     </Link>
