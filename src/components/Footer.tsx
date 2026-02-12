@@ -11,14 +11,12 @@ export function Footer() {
     <footer className='bg-black text-white'>
       <div className='relative mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 xl:px-12'>
         {/* Top section with links and info */}
-        <div className='mb-16 grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-8'>
-          {/* Legal info */}
-
+        <div className='mb-16 grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-8'>
           {/* CTA Section */}
-          <div className='space-y-4 lg:col-span-2'>
+          <div className='space-y-4'>
             <p className='text-primary-content whitespace-pre-line'>
               {footer.cta.caption}
-            </p>
+            </p>  
             <Button className='bg-primary-content text-primary hover:text-primary-content flex h-10 gap-2 p-2 pr-1.5 pl-4 text-sm'>
               {footer.cta.button}
               <Badge className='bg-primary text-primary-content size-8 p-1'>
@@ -28,7 +26,7 @@ export function Footer() {
           </div>
 
           {/* External Links & Contacts */}
-          <div className='flex justify-between gap-2'>
+          <div className='grid grid-col-1 sm:grid-cols-2 gap-8 w-full'>
             {/* External */}
             <div>
               <h4 className='text-secondary-content mb-3 text-xs font-semibold tracking-wider uppercase'>
@@ -48,10 +46,10 @@ export function Footer() {
 
             {/* Contacts */}
             <div>
-              <h4 className='text-secondary-content mb-3 text-right text-xs font-semibold tracking-wider uppercase'>
+              <h4 className='text-secondary-content mb-3 sm:text-right text-xs font-semibold tracking-wider uppercase'>
                 {footer.contacts.title}
               </h4>
-              <ul className='space-y-2 text-right'>
+              <ul className='space-y-2 sm:text-right'>
                 {footer.contacts.items.map((item, index) => (
                   <li key={index}>
                     <Link
