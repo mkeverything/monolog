@@ -345,6 +345,76 @@
     "cta": "Обсудить задачу",
     "hero": "/assets/discuss-hero.png"
   },
+  "projects": {
+    "hero": {
+      "image": "/assets/projects-hero.svg",
+      "content": {
+        "projects": {
+          "title": "/проекты",
+          "subtitle": "Реализовано и запущено"
+        },
+        "year": {
+          "title": "за 2025 год",
+          "subtitle": "12 продуктов"
+        },
+        "returned": {
+          "title": "снова обратились",
+          "subtitle": "+12%"
+        }
+      }
+    },
+    "items": [
+      {
+        "image": "/assets/projects/image-1.png",
+        "title": "Meridian",
+        "tags": "Art Direction, Voice & Tone, UI, UX, Next.js, Tailwind, CSS, GSAP, Motion, Matter.js, Lenis, Vercel",
+        "type": "product",
+        "year": "2025"
+      },
+      {
+        "image": "/assets/projects/image-2.png",
+        "title": "Clarity",
+        "tags": "Art Direction, Voice & Tone, UI, UX, Next.js, Tailwind, CSS, GSAP, Motion, Matter.js, Lenis, Vercel",
+        "type": "product",
+        "year": "2025"
+      },
+      {
+        "image": "/assets/projects/image-3.png",
+        "title": "Vertex",
+        "tags": "Art Direction, Voice & Tone, UI, UX, Next.js, Tailwind, CSS, GSAP, Motion, Matter.js, Lenis, Vercel",
+        "type": "product",
+        "year": "2025"
+      },
+      {
+        "image": "/assets/projects/image-4.png",
+        "title": "Prism",
+        "tags": "Art Direction, Voice & Tone, UI, UX, Next.js, Tailwind, CSS, GSAP, Motion, Matter.js, Lenis, Vercel",
+        "type": "product",
+        "year": "2025"
+      },
+      {
+        "image": "/assets/projects/image-5.png",
+        "title": "Catalyst",
+        "tags": "Art Direction, Voice & Tone, UI, UX, Next.js, Tailwind, CSS, GSAP, Motion, Matter.js, Lenis, Vercel",
+        "type": "product",
+        "year": "2025"
+      },
+      {
+        "image": "/assets/projects/image-6.png",
+        "title": "Nexus",
+        "tags": "Art Direction, Voice & Tone, UI, UX, Next.js, Tailwind, CSS, GSAP, Motion, Matter.js, Lenis, Vercel",
+        "type": "product",
+        "year": "2025"
+      },
+      {
+        "image": "/assets/projects/image-7.png",
+        "title": "Aurora",
+        "tags": "Art Direction, Voice & Tone, UI, UX, Next.js, Tailwind, CSS, GSAP, Motion, Matter.js, Lenis, Vercel",
+        "type": "product",
+        "year": "2025"
+      }
+    ]
+  },
   "contact": {
     "contactInfo": {
       "title": "Контакты",
