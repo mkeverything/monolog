@@ -99,8 +99,8 @@ export default function Showcases({ showcases }: ShowcasesProps) {
       </div>
       <div
         ref={containerRef}
-        className='relative h-[175vh] w-full'
-        style={{ marginTop: '-50vh' }}
+        className='relative h-[120vh] w-full'
+        style={{ marginTop: '-10vh' }}
       >
         <div className='sticky top-0 h-screen w-full overflow-hidden'>
           {images.map((src, index) => (
