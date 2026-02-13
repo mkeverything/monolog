@@ -16,13 +16,22 @@ export default function ProjectPage() {
 
   const { meta } = project
 
-  console.log(meta)
-
   return (
-    <div className='flex size-full p-4'>
+    <div className='grid size-full grid-cols-1 gap-8 p-4 lg:grid-cols-4'>
       <Meta meta={meta} />
       <Content images={meta.images} />
     </div>
+  )
+}
+
+const BackButton: FC<{ cta: string }> = ({ cta }) => {
+  return (
+    <Button className='bg-neutral text-primary flex h-10 w-fit gap-2 pr-4 pl-1.5 font-normal'>
+      <Badge className='bg-secondary size-8 p-1'>
+        <ArrowLeft />
+      </Badge>
+      {cta}
+    </Button>
   )
 }
 
@@ -30,31 +39,29 @@ const Meta: FC<{ meta: MetaProps }> = ({ meta }) => {
   const {
     projects: { cta },
   } = getSiteContent()
+
   return (
-    <div className='flex max-w-sm flex-col gap-8'>
-      <Button className='bg-neutral text-primary flex h-12 w-fit gap-2 pr-4 pl-1.5 text-lg font-normal'>
-        <Badge className='bg-secondary size-10 p-1'>
-          <ArrowLeft />
-        </Badge>
-        {cta}
-      </Button>
-      <div className='flex flex-col gap-2'>
-        <div className='relative size-12 overflow-hidden rounded-sm'>
-          <Image src={meta.icon || ''} fill alt='icon' />
+    <div className='flex w-full flex-col items-center gap-8 sm:w-full lg:max-w-xs lg:items-start'>
+      <BackButton cta={cta} />
+      <div className='flex flex-col gap-8 md:flex-row lg:flex-col'>
+        <div className='flex flex-col gap-2'>
+          <div className='relative size-12 overflow-hidden rounded-sm'>
+            <Image src={meta.icon || ''} fill alt='icon' />
+          </div>
+          <span>{meta.description}</span>
         </div>
-        <span>{meta.description}</span>
-      </div>
-      <div className='flex flex-col'>
-        {meta.items.map((item, i) => {
-          return (
-            <MetaRow
-              key={i}
-              name={item.name}
-              value={item.value}
-              divider={i + 1 < meta.items.length}
-            />
-          )
-        })}
+        <div className='flex flex-col'>
+          {meta.items.map((item, i) => {
+            return (
+              <MetaRow
+                key={i}
+                name={item.name}
+                value={item.value}
+                divider={i + 1 < meta.items.length}
+              />
+            )
+          })}
+        </div>
       </div>
     </div>
   )
@@ -74,20 +81,18 @@ const MetaRow: FC<{ name: string; value: string; divider?: boolean }> = ({
 )
 
 const Content: FC<{ images: string[] }> = ({ images }) => (
-  <div className='size-lg flex flex-col border w-full border-red-500'>
-    {images.map((image, i) => {
-      console.log(image)
-      return (
-        <div key={i} className='relative w-full'>
-          <Image
-            key={i}
-            src={image || ''}
-            fill
-            alt={`image-${i}`}
-          />
-        </div>
-      )
-    })}
+  <div className='col-span-2 flex w-full flex-col gap-4'>
+    {images.map((image, i) => (
+      <div key={i} className='relative aspect-video w-full'>
+        <Image
+          src={image}
+          fill
+          className='rounded-lg object-cover'
+          alt={`Project image ${i + 1}`}
+          sizes='(max-width: 768px) 100vw, 80vw'
+        />
+      </div>
+    ))}
   </div>
 )
 
