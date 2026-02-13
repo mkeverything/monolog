@@ -5,6 +5,7 @@ import { Button } from '@/src/components/ui/Button'
 import { getProjectContent, getSiteContent, SiteContent } from '@/src/lib/cms'
 import { ArrowLeft } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useParams } from 'next/navigation'
 import { FC } from 'react'
 
@@ -26,12 +27,14 @@ export default function ProjectPage() {
 
 const BackButton: FC<{ cta: string }> = ({ cta }) => {
   return (
-    <Button className='bg-neutral text-primary flex h-10 w-fit gap-2 pr-4 pl-1.5 font-normal'>
-      <Badge className='bg-secondary size-8 p-1'>
-        <ArrowLeft />
-      </Badge>
-      {cta}
-    </Button>
+    <Link href='/projects'>
+      <Button className='bg-neutral text-primary flex h-10 w-fit gap-2 pr-4 pl-1.5 font-normal'>
+        <Badge className='bg-secondary size-8 p-1'>
+          <ArrowLeft />
+        </Badge>
+        {cta}
+      </Button>
+    </Link>
   )
 }
 

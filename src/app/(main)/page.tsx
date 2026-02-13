@@ -1,4 +1,4 @@
-import { getContactContent, getHomeContent } from '../lib/cms'
+import { getContactContent, getHomeContent } from '@/src/lib/cms'
 import Conditions from './home/Conditions'
 import Discuss from './home/Discuss'
 import FAQ from './home/FAQ'

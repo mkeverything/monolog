@@ -1,7 +1,5 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { Footer } from '../components/Footer'
-import { Header } from '../components/Header'
 import './globals.css'
 import { getSiteInfo } from '../lib/cms'
 
@@ -12,12 +10,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' data-theme='light'>
-      <body className={`${inter.className} font-sansantialiased`}>
-        <div className='flex min-h-screen flex-col'>
-          <Header />
-          <div className='flex-1 pt-16 sm:pt-20'>{children}</div>
-          <Footer />
-        </div>
+      <body className={`${inter.className} font-sans antialiased`}>
+        {children}
       </body>
     </html>
   )
