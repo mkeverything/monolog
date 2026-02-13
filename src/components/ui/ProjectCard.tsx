@@ -1,13 +1,16 @@
 'use client'
 
-import Image from 'next/image'
 import { Badge } from '@/src/components/ui/Badge'
+import { SiteContent } from '@/src/lib/cms'
 import { cn } from '@/src/lib/utils'
+import Image from 'next/image'
+import Link from 'next/link'
 import FrameOverlay from './FrameOverlay'
 
 export function ProjectCard({
   image,
   title,
+  slug,
   type,
   year,
   tags,
@@ -19,9 +22,10 @@ export function ProjectCard({
     .filter(Boolean)
 
   return (
-    <div
+    <Link
+      href={`/projects/${slug}`}
       className={cn(
-        'flex h-[90dvh] w-auto flex-col overflow-hidden rounded-2xl',
+        'flex h-[90dvh] w-auto cursor-pointer flex-col overflow-hidden rounded-2xl',
         className,
       )}
     >
@@ -57,15 +61,10 @@ export function ProjectCard({
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
 
-type ProjectCardProps = {
-  image: string
-  title: string
-  type: string
-  year: string
-  tags: string
+type ProjectCardProps = SiteContent['projects']['items'][number] & {
   className?: string
 }
