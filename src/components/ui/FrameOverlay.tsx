@@ -13,7 +13,7 @@ export default function FrameOverlay({ children }: PropsWithChildren) {
       onMouseLeave={() => setIsHovered(false)}
     >
       <div
-        className={`pointer-events-none absolute inset-0 z-10 transition duration-500 ${isHovered ? 'scale-100 opacity-100' : 'scale-105 opacity-0'}`}
+        className={`pointer-events-none absolute inset-0 z-10 bg-radial from-black/10 to-black/50 transition duration-300 ${isHovered ? 'scale-100 opacity-100' : 'scale-105 opacity-0'}`}
       >
         <Image
           src='/assets/projects/frame/frame-part.svg'
@@ -43,7 +43,7 @@ export default function FrameOverlay({ children }: PropsWithChildren) {
           height={30}
           className='absolute bottom-6 left-6 -rotate-90'
         />
-        <div className={`bg-primary/50 absolute inset-0 -z-10 transition`} />
+        {/* <div className={`bg-primary/50 absolute inset-0 -z-10 transition`} /> */}
         <Image
           src='/assets/projects/frame/cursor.svg'
           alt=''
