@@ -363,55 +363,203 @@
         }
       }
     },
+    "cta": "Вернуться назад",
     "items": [
       {
         "image": "/assets/projects/image-1.png",
-        "title": "Meridian",
+        "title": "Sense",
+        "slug": "sense",
         "tags": "Art Direction, Voice & Tone, UI, UX, Next.js, Tailwind, CSS, GSAP, Motion, Matter.js, Lenis, Vercel",
         "type": "product",
-        "year": "2025"
+        "year": "2025",
+        "meta": {
+          "icon": "/assets/projects/project-images/icon.png",
+          "description": "Цифровой сервис для синхронизации встреч и рабочих процессов.",
+          "items": [
+            { "name": "Год", "value": "2025" },
+            { "name": "Срок запуска", "value": "5 недель" },
+            { "name": "Тип проекта", "value": "веб-продукт" },
+            {
+              "name": "Формат работ",
+              "value": "проектирование, дизайн, разработка-продукта"
+            }
+          ],
+          "images": [
+            "/assets/projects/project-images/image-1.png",
+            "/assets/projects/project-images/image-2.png",
+            "/assets/projects/project-images/image-3.png",
+            "/assets/projects/project-images/image-4.png",
+            "/assets/projects/project-images/image-5.png"
+          ]
+        }
       },
       {
         "image": "/assets/projects/image-2.png",
-        "title": "Clarity",
+        "title": "Alphamark",
+        "slug": "alphamark",
         "tags": "Art Direction, Voice & Tone, UI, UX, Next.js, Tailwind, CSS, GSAP, Motion, Matter.js, Lenis, Vercel",
         "type": "product",
-        "year": "2025"
+        "year": "2025",
+        "meta": {
+          "icon": "/assets/projects/project-images/icon.png",
+          "description": "Цифровой сервис для синхронизации встреч и рабочих процессов.",
+          "items": [
+            { "name": "Год", "value": "2025" },
+            { "name": "Срок запуска", "value": "5 недель" },
+            { "name": "Тип проекта", "value": "веб-продукт" },
+            {
+              "name": "Формат работ",
+              "value": "проектирование, дизайн, разработка-продукта"
+            }
+          ],
+          "images": [
+            "/assets/projects/project-images/image-1.png",
+            "/assets/projects/project-images/image-2.png",
+            "/assets/projects/project-images/image-3.png",
+            "/assets/projects/project-images/image-4.png",
+            "/assets/projects/project-images/image-5.png"
+          ]
+        }
       },
       {
         "image": "/assets/projects/image-3.png",
-        "title": "Vertex",
+        "title": "Rossmason",
+        "slug": "rossmason",
         "tags": "Art Direction, Voice & Tone, UI, UX, Next.js, Tailwind, CSS, GSAP, Motion, Matter.js, Lenis, Vercel",
         "type": "product",
-        "year": "2025"
+        "year": "2025",
+        "meta": {
+          "icon": "/assets/projects/project-images/icon.png",
+          "description": "Цифровой сервис для синхронизации встреч и рабочих процессов.",
+          "items": [
+            { "name": "Год", "value": "2025" },
+            { "name": "Срок запуска", "value": "5 недель" },
+            { "name": "Тип проекта", "value": "веб-продукт" },
+            {
+              "name": "Формат работ",
+              "value": "проектирование, дизайн, разработка-продукта"
+            }
+          ],
+          "images": [
+            "/assets/projects/project-images/image-1.png",
+            "/assets/projects/project-images/image-2.png",
+            "/assets/projects/project-images/image-3.png",
+            "/assets/projects/project-images/image-4.png",
+            "/assets/projects/project-images/image-5.png"
+          ]
+        }
       },
       {
         "image": "/assets/projects/image-4.png",
-        "title": "Prism",
+        "title": "Nouere",
+        "slug": "nouere",
         "tags": "Art Direction, Voice & Tone, UI, UX, Next.js, Tailwind, CSS, GSAP, Motion, Matter.js, Lenis, Vercel",
         "type": "product",
-        "year": "2025"
+        "year": "2025",
+        "meta": {
+          "icon": "/assets/projects/project-images/icon.png",
+          "description": "Цифровой сервис для синхронизации встреч и рабочих процессов.",
+          "items": [
+            { "name": "Год", "value": "2025" },
+            { "name": "Срок запуска", "value": "5 недель" },
+            { "name": "Тип проекта", "value": "веб-продукт" },
+            {
+              "name": "Формат работ",
+              "value": "проектирование, дизайн, разработка-продукта"
+            }
+          ],
+          "images": [
+            "/assets/projects/project-images/image-1.png",
+            "/assets/projects/project-images/image-2.png",
+            "/assets/projects/project-images/image-3.png",
+            "/assets/projects/project-images/image-4.png",
+            "/assets/projects/project-images/image-5.png"
+          ]
+        }
       },
       {
         "image": "/assets/projects/image-5.png",
-        "title": "Catalyst",
+        "title": "Pregnancy",
+        "slug": "pregnancy",
         "tags": "Art Direction, Voice & Tone, UI, UX, Next.js, Tailwind, CSS, GSAP, Motion, Matter.js, Lenis, Vercel",
         "type": "product",
-        "year": "2025"
+        "year": "2025",
+        "meta": {
+          "icon": "/assets/projects/project-images/icon.png",
+          "description": "Цифровой сервис для синхронизации встреч и рабочих процессов.",
+          "items": [
+            { "name": "Год", "value": "2025" },
+            { "name": "Срок запуска", "value": "5 недель" },
+            { "name": "Тип проекта", "value": "веб-продукт" },
+            {
+              "name": "Формат работ",
+              "value": "проектирование, дизайн, разработка-продукта"
+            }
+          ],
+          "images": [
+            "/assets/projects/project-images/image-1.png",
+            "/assets/projects/project-images/image-2.png",
+            "/assets/projects/project-images/image-3.png",
+            "/assets/projects/project-images/image-4.png",
+            "/assets/projects/project-images/image-5.png"
+          ]
+        }
       },
       {
         "image": "/assets/projects/image-6.png",
-        "title": "Nexus",
+        "title": "Trove",
+        "slug": "trove",
         "tags": "Art Direction, Voice & Tone, UI, UX, Next.js, Tailwind, CSS, GSAP, Motion, Matter.js, Lenis, Vercel",
         "type": "product",
-        "year": "2025"
+        "year": "2025",
+        "meta": {
+          "icon": "/assets/projects/project-images/icon.png",
+          "description": "Цифровой сервис для синхронизации встреч и рабочих процессов.",
+          "items": [
+            { "name": "Год", "value": "2025" },
+            { "name": "Срок запуска", "value": "5 недель" },
+            { "name": "Тип проекта", "value": "веб-продукт" },
+            {
+              "name": "Формат работ",
+              "value": "проектирование, дизайн, разработка-продукта"
+            }
+          ],
+          "images": [
+            "/assets/projects/project-images/image-1.png",
+            "/assets/projects/project-images/image-2.png",
+            "/assets/projects/project-images/image-3.png",
+            "/assets/projects/project-images/image-4.png",
+            "/assets/projects/project-images/image-5.png"
+          ]
+        }
       },
       {
         "image": "/assets/projects/image-7.png",
-        "title": "Aurora",
+        "title": "Mindpalace",
+        "slug": "mindpalace",
         "tags": "Art Direction, Voice & Tone, UI, UX, Next.js, Tailwind, CSS, GSAP, Motion, Matter.js, Lenis, Vercel",
         "type": "product",
-        "year": "2025"
+        "year": "2025",
+        "meta": {
+          "icon": "/assets/projects/project-images/icon.png",
+          "description": "Цифровой сервис для синхронизации встреч и рабочих процессов.",
+          "items": [
+            { "name": "Год", "value": "2025" },
+            { "name": "Срок запуска", "value": "5 недель" },
+            { "name": "Тип проекта", "value": "веб-продукт" },
+            {
+              "name": "Формат работ",
+              "value": "проектирование, дизайн, разработка-продукта"
+            }
+          ],
+          "images": [
+            "/assets/projects/project-images/image-1.png",
+            "/assets/projects/project-images/image-2.png",
+            "/assets/projects/project-images/image-3.png",
+            "/assets/projects/project-images/image-4.png",
+            "/assets/projects/project-images/image-5.png"
+          ]
+        }
       }
     ]
   },

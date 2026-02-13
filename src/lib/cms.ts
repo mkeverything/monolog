@@ -47,3 +47,9 @@ export function getContactContent() {
 export function getSiteInfo() {
   return content.site
 }
+
+export function getProjectContent(
+  slug: string,
+): SiteContent['projects']['items'][number] | undefined {
+  return content.projects.items.find((project) => project.slug === slug)
+}
