@@ -56,7 +56,7 @@ import { cn } from '@/src/lib/utils'
 ### Naming Conventions
 
 - **Components:** PascalCase (e.g., `Button`, `Header`)
-- **Props Interfaces:** ComponentName + "Props" (e.g., `ButtonProps`)
+- **Props Types:** ComponentName + "Props" (e.g., `ButtonProps`)
 - **Functions/Variables:** camelCase
 - **Constants:** UPPER_SNAKE_CASE
 - **Type aliases:** PascalCase
@@ -65,13 +65,12 @@ import { cn } from '@/src/lib/utils'
 ### TypeScript Guidelines
 
 - Use strict TypeScript configuration
-- Define interfaces for all component props
-- Use `type` for unions/intersections, `interface` for object shapes
+- Define types for all component props (use `type` instead of `interface`)
 - Avoid `any` - use `unknown` with type guards
 - Use `React.ReactNode` for children types
 
 ```typescript
-interface ButtonProps {
+type ButtonProps = {
   children: React.ReactNode
   variant?: ButtonVariant
   onClick?: () => void
@@ -87,7 +86,7 @@ type ButtonVariant = 'primary' | 'secondary' | 'outline'
 
 import { useState } from "react"
 
-interface ComponentProps {
+type ComponentProps = {
   // props definition
 }
 
