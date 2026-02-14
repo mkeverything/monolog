@@ -2,6 +2,7 @@ import { FullPageSection } from '@/src/components/FullPageSection'
 import { Badge } from '@/src/components/ui/Badge'
 import { Button } from '@/src/components/ui/Button'
 import { SiteContent } from '@/src/lib/cms'
+import Image from 'next/image'
 import { Fragment } from 'react/jsx-runtime'
 
 export default function Hero({
@@ -13,10 +14,22 @@ export default function Hero({
       centered={false}
       background='neutral'
       id='hero'
-      className='flex flex-col items-start'
+      className='relative flex flex-col items-start'
     >
-      <div className='w-full absolute top-0 h-20 bg-neutral'/>
-      <div className='mt-28 flex max-w-2/5 grow flex-col gap-2'>
+      <div className='bg-neutral absolute -top-20 h-20 w-full' />
+      <Image
+        src='/assets/hero.png'
+        fill
+        alt='hero'
+        className='absolute inset-0 z-10 object-cover'
+      />
+      <Image
+        src='/assets/hero-pattern.svg'
+        fill
+        alt='hero'
+        className='absolute inset-0 object-cover'
+      />
+      <div className='z-20 mt-28 flex max-w-2/5 grow flex-col gap-2'>
         <div className='flex gap-3'>
           {home.hero.tags.map((tag) => (
             <Badge key={tag}>{tag}</Badge>
@@ -34,7 +47,7 @@ export default function Hero({
           {home.hero.ctaPrimary?.label}
         </Button>
       </div>
-      <div className='grid grid-cols-[max-content_auto_max-content_1fr] gap-2 max-sm:hidden'>
+      <div className='z-20 grid grid-cols-[max-content_auto_max-content_1fr] gap-2 max-sm:hidden'>
         {contact.contactInfo.contacts.map((item) => (
           <Fragment key={item.label}>
             <div className='text-accent whitespace-nowrap'>{item.label}</div>
