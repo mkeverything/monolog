@@ -3,7 +3,6 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
-import { FullPageSection } from '@/src/components/FullPageSection'
 import { SiteContent } from '@/src/lib/cms'
 import { cn } from '@/src/lib/utils'
 
@@ -93,28 +92,29 @@ export default function Showcases({ showcases }: ShowcasesProps) {
   const images = showcases.images || []
 
   return (
-    <FullPageSection id='showcases' className='relative overflow-hidden'>
-      <div className='absolute top-0 z-20 flex items-center justify-center'>
-        <span className='text-xl font-medium'>{showcases.title}</span>
-      </div>
-      <div
-        ref={containerRef}
-        className='relative h-[120vh] w-full'
-        style={{ marginTop: '-10vh' }}
-      >
-        <div className='sticky top-0 h-screen w-full overflow-hidden'>
-          {images.map((src, index) => (
-            <ShowcaseCard
-              key={index}
-              src={src}
-              index={index}
-              total={images.length}
-              progress={scrollYProgress}
-            />
-          ))}
+    <div
+      id='showcases'
+      ref={containerRef}
+      className='relative w-full'
+      style={{
+        height: `${images.length * 100}vh`,
+      }}
+    >
+      <div className='sticky top-0 h-dvh w-full overflow-hidden'>
+        <div className='absolute top-4 right-0 left-0 z-20 flex items-center justify-center'>
+          <span className='text-xl font-medium'>{showcases.title}</span>
         </div>
+        {images.map((src, index) => (
+          <ShowcaseCard
+            key={index}
+            src={src}
+            index={index}
+            total={images.length}
+            progress={scrollYProgress}
+          />
+        ))}
       </div>
-    </FullPageSection>
+    </div>
   )
 }
 
