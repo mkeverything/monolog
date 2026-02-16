@@ -16,7 +16,7 @@ export default function Hero({
       id='hero'
       className='relative flex flex-col items-start'
     >
-      <div className='bg-neutral absolute -top-20 h-20 w-full' />
+      <div className='bg-neutral absolute -top-20 left-0 right-0 h-20' />
       <Image
         src='/assets/hero.png'
         fill
@@ -29,7 +29,7 @@ export default function Hero({
         alt='hero'
         className='absolute inset-0 object-cover'
       />
-      <div className='z-20 mt-28 flex max-w-2/5 grow flex-col gap-2'>
+      <div className='z-20 mt-[25dvh] flex max-w-2/5 grow flex-col gap-2'>
         <div className='flex gap-3'>
           {home.hero.tags.map((tag) => (
             <Badge key={tag}>{tag}</Badge>
