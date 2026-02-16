@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
+import { MotionValue } from 'framer-motion'
 import { SiteContent } from '../lib/cms'
 import { Badge } from './ui/Badge'
 import { Button } from './ui/Button'
@@ -11,7 +12,7 @@ import { Card } from './ui/Card'
 
 type HorizontalCarouselProps = {
   data: SiteContent['home']['workflow']
-  scrollProgress?: number
+  scrollProgress?: number | MotionValue<number>
 }
 
 let mounted = false
@@ -59,12 +60,22 @@ export function HorizontalCarousel({
     if (!carousel) return
 
     const maxScroll = carousel.scrollWidth - carousel.clientWidth
-    const targetScroll = scrollProgress * maxScroll
 
-    carousel.scrollTo({
-      left: targetScroll,
-      behavior: 'auto',
-    })
+    if (typeof scrollProgress === 'number') {
+      // Static value - set once
+      carousel.scrollTo({
+        left: scrollProgress * maxScroll,
+        behavior: 'auto',
+      })
+    } else {
+      // MotionValue - subscribe to changes
+      return scrollProgress.on('change', (latest) => {
+        carousel.scrollTo({
+          left: latest * maxScroll,
+          behavior: 'auto',
+        })
+      })
+    }
   }, [scrollProgress])
 
   const progressPercentage = Math.round(

@@ -1,63 +1,42 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
-import { FullPageSection } from '@/src/components/FullPageSection'
+import { useRef } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import { HorizontalCarousel } from '@/src/components/HorizontalCarousel'
 import { SiteContent } from '@/src/lib/cms'
 
 export default function Gallery(home: SiteContent['home']) {
-  const sectionRef = useRef<HTMLDivElement>(null)
-  const [scrollProgress, setScrollProgress] = useState(0)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start start', 'end end'],
+  })
 
-  useEffect(() => {
-    const section = sectionRef.current
-    if (!section) return
-
-    const handleScroll = () => {
-      const rect = section.getBoundingClientRect()
-      const windowHeight = window.innerHeight
-      const sectionHeight = rect.height
-
-      // Shorter scroll range - only scroll when section is mostly visible
-      // Start when section top reaches 20% from top of viewport
-      // End when section bottom reaches 80% from top of viewport
-      const scrollStart = windowHeight * 0.2
-      const scrollEnd = windowHeight * 0.8 - sectionHeight
-      const currentPosition = rect.top
-
-      // Calculate normalized progress (0 to 1) over shorter range
-      let progress = 0
-      if (currentPosition <= scrollStart) {
-        if (currentPosition >= scrollEnd) {
-          progress = (scrollStart - currentPosition) / (scrollStart - scrollEnd)
-        } else {
-          progress = 1
-        }
-      }
-
-      setScrollProgress(Math.max(0, Math.min(1, progress)))
-    }
-
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    handleScroll() // Initial calculation
-
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  const scrollProgress = useTransform(scrollYProgress, [0, 1], [0, 1])
 
   return (
-    <FullPageSection id='gallery'>
-      <div
-        ref={sectionRef}
-        className='relative flex min-h-dvh w-full flex-col items-center justify-center gap-8'
-      >
-        <h2 className='text-primary text-xl font-medium'>
-          {home.workflow.title}
-        </h2>
-        <HorizontalCarousel
-          data={home.workflow}
-          scrollProgress={scrollProgress}
-        />
+    <div
+      ref={containerRef}
+      className='relative p-4 sm:p-6'
+      style={{ height: `${home.workflow.gallery.length * 100}vh` }}
+    >
+      <div className='sticky top-0 h-dvh w-full'>
+        <div className='relative flex h-full w-full flex-col items-center justify-center gap-8 p-4 sm:p-6'>
+          <h2 className='text-primary text-xl font-medium'>
+            {home.workflow.title}
+          </h2>
+          <HorizontalCarousel
+            data={home.workflow}
+            scrollProgress={scrollProgress}
+          />
+          <motion.div
+            className='pointer-events-none absolute inset-0'
+            style={{
+              opacity: useTransform(scrollYProgress, [0.95, 1], [0, 1]),
+            }}
+          />
+        </div>
       </div>
-    </FullPageSection>
+    </div>
   )
 }
