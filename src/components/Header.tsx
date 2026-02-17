@@ -39,7 +39,7 @@ export function Header() {
                 role='tab'
                 key={item.href}
                 href={item.href}
-                className={`hover:text-accent tab flex h-8 gap-2 font-light transition-colors duration-200 ${pathname === item.href ? 'tab-active' : 'text-white'}`}
+                className={`hover:text-accent tab flex h-8 gap-2 font-light transition-colors duration-200 ${pathname === item.href ? 'tab-active font-medium' : 'text-white'}`}
               >
                 {item.href === '/projects' && (
                   <Badge className='badge-accent text-base-100 badge-xs aspect-square rounded-full text-[8px] font-medium'>
@@ -50,7 +50,7 @@ export function Header() {
               </Link>
             ))}
           </nav>
-          <Button variant='accent' size='sm'>
+          <Button variant='accent' size='sm' className='font-medium'>
             <Link href={header.accentButton.href}>
               {header.accentButton.label}
             </Link>
