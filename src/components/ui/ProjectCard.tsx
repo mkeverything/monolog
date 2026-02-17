@@ -1,6 +1,5 @@
 'use client'
 
-import { Badge } from '@/src/components/ui/Badge'
 import { SiteContent } from '@/src/lib/cms'
 import { cn } from '@/src/lib/utils'
 import Image from 'next/image'
@@ -46,14 +45,12 @@ export function ProjectCard({
         <div className='relative overflow-hidden'>
           <div className='pointer-events-none absolute top-0 left-0 z-10 h-full w-8 bg-linear-to-r from-white to-transparent' />
           <div className='pointer-events-none absolute top-0 right-0 z-10 h-full w-8 bg-linear-to-l from-white to-transparent' />
-          <div className='scrollbar-hide flex gap-2 overflow-x-auto'>
+          <div className='scrollbar-hide text-secondary-content flex gap-2 overflow-x-auto text-xs'>
             {tagsList.map((tag, index) => (
-              <Badge
-                key={`${tag}-${index}`}
-                className='badge-sm bg-secondary/10 text-secondary-content border-0 whitespace-nowrap'
-              >
+              <span key={index} className='text-nowrap'>
                 {tag}
-              </Badge>
+                {index + 1 < tagsList.length && ','}
+              </span>
             ))}
           </div>
         </div>
