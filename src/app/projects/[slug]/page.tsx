@@ -1,5 +1,6 @@
 'use client'
 
+import { Footer } from '@/src/components/Footer'
 import { Badge } from '@/src/components/ui/Badge'
 import { Button } from '@/src/components/ui/Button'
 import { getProjectContent, getSiteContent, SiteContent } from '@/src/lib/cms'
@@ -18,10 +19,14 @@ export default function ProjectPage() {
   const { meta } = project
 
   return (
-    <div className='grid size-full grid-cols-1 gap-8 p-4 lg:grid-cols-4'>
-      <Meta meta={meta} />
-      <Content images={meta.images} />
-    </div>
+    <>
+      {/* <div className='grid size-full grid-cols-1 gap-8 p-4 lg:grid-cols-4 relative items-start'> */}
+      <div className='relative flex size-full flex-col gap-8 p-4 lg:flex-row'>
+        <Meta meta={meta} />
+        <Content images={meta.images} />
+      </div>
+      <Footer />
+    </>
   )
 }
 
@@ -44,14 +49,14 @@ const Meta: FC<{ meta: MetaProps }> = ({ meta }) => {
   } = getSiteContent()
 
   return (
-    <div className='flex w-full flex-col items-center gap-8 sm:w-full lg:max-w-xs lg:items-start'>
+    <div className='top-24 flex size-full flex-col items-center gap-12 self-start sm:w-full lg:sticky lg:max-w-[25vw] lg:items-start'>
       <BackButton cta={cta} />
       <div className='flex flex-col gap-8 md:flex-row lg:flex-col'>
         <div className='flex flex-col gap-2'>
           <div className='relative size-12 overflow-hidden rounded-sm'>
             <Image src={meta.icon || ''} fill alt='icon' />
           </div>
-          <span>{meta.description}</span>
+          <span className='text-sm font-medium'>{meta.description}</span>
         </div>
         <div className='flex flex-col'>
           {meta.items.map((item, i) => {
@@ -76,7 +81,7 @@ const MetaRow: FC<{ name: string; value: string; divider?: boolean }> = ({
   divider,
 }) => (
   <div
-    className={`grid grid-cols-2 ${divider && 'border-secondary border-b'} py-2`}
+    className={`grid grid-cols-2 ${divider && 'border-secondary border-b'} py-2 text-sm font-medium`}
   >
     <span className='text-secondary-content'>{name}:</span>
     <span className='w-fit'>{value}</span>
@@ -84,7 +89,7 @@ const MetaRow: FC<{ name: string; value: string; divider?: boolean }> = ({
 )
 
 const Content: FC<{ images: string[] }> = ({ images }) => (
-  <div className='col-span-2 flex w-full flex-col gap-4'>
+  <div className='col-span-2 flex w-full flex-col gap-4 lg:max-w-[40%]'>
     {images.map((image, i) => (
       <div key={i} className='relative aspect-video w-full'>
         <Image
