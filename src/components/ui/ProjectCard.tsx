@@ -2,6 +2,7 @@
 
 import { SiteContent } from '@/src/lib/cms'
 import { cn } from '@/src/lib/utils'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import FrameOverlay from './FrameOverlay'
@@ -45,13 +46,28 @@ export function ProjectCard({
         <div className='relative overflow-hidden'>
           <div className='pointer-events-none absolute top-0 left-0 z-10 h-full w-8 bg-linear-to-r from-white to-transparent' />
           <div className='pointer-events-none absolute top-0 right-0 z-10 h-full w-8 bg-linear-to-l from-white to-transparent' />
-          <div className='scrollbar-hide text-secondary-content flex gap-2 overflow-x-auto text-xs'>
-            {tagsList.map((tag, index) => (
-              <span key={index} className='text-nowrap'>
-                {tag}
-                {index + 1 < tagsList.length && ','}
-              </span>
-            ))}
+          <div className='scrollbar-hide text-secondary-content flex overflow-x-hidden text-xs'>
+            <motion.div
+              className='flex gap-2'
+              animate={{
+                x: ['0%', '-50%'],
+              }}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: 'loop',
+                  duration: 20,
+                  ease: 'linear',
+                },
+              }}
+            >
+              {[...tagsList, ...tagsList].map((tag, index) => (
+                <span key={index} className='text-nowrap'>
+                  {tag}
+                  {index + 1 < tagsList.length * 2 && ','}
+                </span>
+              ))}
+            </motion.div>
           </div>
         </div>
       </div>
