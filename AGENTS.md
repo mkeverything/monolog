@@ -143,6 +143,7 @@ src/
 │   │   └── Card.tsx
 │   ├── FullPageSection.tsx
 │   ├── HorizontalCarousel.tsx
+│   ├── InfiniteGallery.tsx # Infinite XY scroll gallery (lab page)
 │   ├── Header.tsx
 │   └── Footer.tsx
 ├── lib/
@@ -191,6 +192,47 @@ const { scrollYProgress } = useScroll({
 
 const y = useTransform(scrollYProgress, [0, 1], ['0%', '100%'])
 const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
+```
+
+**Drag/Scroll Interactions (Performance Pattern):**
+
+Use refs for high-frequency state updates (drag/scroll) to avoid re-renders:
+
+```typescript
+const stateRef = useRef({
+  currentX: 0,
+  currentY: 0,
+  targetX: 0,
+  targetY: 0,
+  // ... other mutable state
+})
+
+// Update DOM directly in animation loop
+requestAnimationFrame(() => {
+  const state = stateRef.current
+  state.currentX += (state.targetX - state.currentX) * ease
+  canvas.style.transform = `translate(${state.currentX}px, ${state.currentY}px)`
+})
+```
+
+**Virtual Rendering Pattern:**
+
+Only render items visible in viewport plus buffer:
+
+```typescript
+const BUFFER = 2.5 // 2.5x viewport buffer
+const viewWidth = window.innerWidth * (1 + BUFFER)
+
+// Calculate visible range
+const startCol = Math.floor((-currentX - viewWidth / 2) / itemWidth)
+const endCol = Math.ceil((-currentX + viewWidth * 1.5) / itemWidth)
+
+// Render only items in range
+for (let row = startRow; row <= endRow; row++) {
+  for (let col = startCol; col <= endCol; col++) {
+    // Render item
+  }
+}
 ```
 
 ### Common Utilities
