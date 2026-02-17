@@ -4,13 +4,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
-import { getHeaderContent } from '../lib/cms'
+import { getHeaderContent, getSiteContent } from '../lib/cms'
 import { cn } from '../lib/utils'
 import { Button } from './ui/Button'
 import { Badge } from './ui/Badge'
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const site = getSiteContent()
   const header = getHeaderContent()
   const pathname = usePathname()
 
@@ -24,6 +25,7 @@ export function Header() {
               height={46}
               src={header.logo.src}
               alt={header.logo.alt}
+              className='h-10'
             />
           </Link>
 
@@ -37,11 +39,11 @@ export function Header() {
                 role='tab'
                 key={item.href}
                 href={item.href}
-                className={`hover:text-accent tab flex gap-2 font-light transition-colors duration-200 ${pathname === item.href ? 'tab-active' : 'text-white'}`}
+                className={`hover:text-accent tab flex h-8 gap-2 font-light transition-colors duration-200 ${pathname === item.href ? 'tab-active' : 'text-white'}`}
               >
                 {item.href === '/projects' && (
                   <Badge className='badge-accent text-base-100 badge-xs aspect-square rounded-full text-[8px] font-medium'>
-                    {header.projectCounter}
+                    {site.projects.items.length}
                   </Badge>
                 )}
                 {item.label}
