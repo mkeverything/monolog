@@ -373,6 +373,7 @@
         "type": "product",
         "year": "2025",
         "meta": {
+          "href": "https://example.com",
           "icon": "/assets/projects/project-images/icon.png",
           "description": "Цифровой сервис для синхронизации встреч и рабочих процессов.",
           "items": [
@@ -401,6 +402,7 @@
         "type": "product",
         "year": "2025",
         "meta": {
+          "href": "https://example.com",
           "icon": "/assets/projects/project-images/icon.png",
           "description": "Цифровой сервис для синхронизации встреч и рабочих процессов.",
           "items": [
@@ -429,6 +431,7 @@
         "type": "product",
         "year": "2025",
         "meta": {
+          "href": "https://example.com",
           "icon": "/assets/projects/project-images/icon.png",
           "description": "Цифровой сервис для синхронизации встреч и рабочих процессов.",
           "items": [
@@ -457,6 +460,7 @@
         "type": "product",
         "year": "2025",
         "meta": {
+          "href": "https://example.com",
           "icon": "/assets/projects/project-images/icon.png",
           "description": "Цифровой сервис для синхронизации встреч и рабочих процессов.",
           "items": [
@@ -485,6 +489,7 @@
         "type": "product",
         "year": "2025",
         "meta": {
+          "href": "https://example.com",
           "icon": "/assets/projects/project-images/icon.png",
           "description": "Цифровой сервис для синхронизации встреч и рабочих процессов.",
           "items": [
@@ -513,6 +518,7 @@
         "type": "product",
         "year": "2025",
         "meta": {
+          "href": "https://example.com",
           "icon": "/assets/projects/project-images/icon.png",
           "description": "Цифровой сервис для синхронизации встреч и рабочих процессов.",
           "items": [
@@ -541,6 +547,7 @@
         "type": "product",
         "year": "2025",
         "meta": {
+          "href": "https://example.com",
           "icon": "/assets/projects/project-images/icon.png",
           "description": "Цифровой сервис для синхронизации встреч и рабочих процессов.",
           "items": [

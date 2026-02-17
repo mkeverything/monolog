@@ -16,14 +16,13 @@ export default function ProjectPage() {
 
   if (!project) return null
 
-  const { meta } = project
+  const { title, meta } = project
 
   return (
     <>
-      {/* <div className='grid size-full grid-cols-1 gap-8 p-4 lg:grid-cols-4 relative items-start'> */}
       <div className='relative flex size-full flex-col gap-8 p-4 lg:flex-row'>
         <Meta meta={meta} />
-        <Content images={meta.images} />
+        <Content images={meta.images} href={meta.href} title={title} />
       </div>
       <Footer />
     </>
@@ -88,8 +87,13 @@ const MetaRow: FC<{ name: string; value: string; divider?: boolean }> = ({
   </div>
 )
 
-const Content: FC<{ images: string[] }> = ({ images }) => (
-  <div className='col-span-2 flex w-full flex-col gap-4 lg:max-w-[40%]'>
+const Content: FC<{ images: string[]; href: string; title: string }> = ({
+  images,
+  href,
+  title,
+}) => (
+  <div className='relative flex size-full flex-col gap-4 lg:max-w-[40%]'>
+    <LinkButton href={href} title={title} />
     {images.map((image, i) => (
       <div key={i} className='relative aspect-video w-full'>
         <Image
@@ -102,6 +106,18 @@ const Content: FC<{ images: string[] }> = ({ images }) => (
       </div>
     ))}
   </div>
+)
+
+const LinkButton: FC<{ href: string; title: string }> = ({ href, title }) => (
+  <Link
+    href={href}
+    className='absolute inset-0 z-10 flex items-center justify-center'
+    title={title}
+  >
+    <Button size='sm' className='bg-primary text-primary-content h-8'>
+      {title}
+    </Button>
+  </Link>
 )
 
 type MetaProps = SiteContent['projects']['items'][number]['meta']
