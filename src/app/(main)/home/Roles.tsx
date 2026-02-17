@@ -11,7 +11,7 @@ export default function Roles({ roles }: RolesProps) {
       <SectionSubtitle className='font-semibold'>{roles.title}</SectionSubtitle>
       <span className='mt-2'>{roles.caption}</span>
 
-      <div className='mt-12 flex w-full max-w-5xl flex-wrap justify-center gap-4'>
+      <div className='mt-12 flex w-full max-w-5xl flex-wrap justify-center gap-20'>
         {roles.team.map((member, index) => (
           <div
             className='flex flex-col items-center gap-2'
