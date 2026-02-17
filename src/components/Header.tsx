@@ -50,7 +50,7 @@ export function Header() {
               </Link>
             ))}
           </nav>
-          <Button variant='accent' size='sm' className='font-medium'>
+          <Button variant='accent' size='sm'>
             <Link href={header.accentButton.href}>
               {header.accentButton.label}
             </Link>
