@@ -24,12 +24,9 @@ export function ProjectCard({
   return (
     <Link
       href={`/projects/${slug}`}
-      className={cn(
-        'flex h-[90dvh] w-auto cursor-pointer flex-col overflow-hidden rounded-2xl',
-        className,
-      )}
+      className={cn('flex h-[90dvh] w-auto cursor-pointer flex-col', className)}
     >
-      <div className='relative flex-95'>
+      <div className='relative flex-95 overflow-hidden rounded-2xl'>
         <FrameOverlay>
           <Image
             src={image}
