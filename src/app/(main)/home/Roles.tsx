@@ -17,7 +17,7 @@ export default function Roles({ roles }: RolesProps) {
             className='flex flex-col items-center gap-2'
             key={`${member.role}-${index}`}
           >
-            <div className='group bg-base-200 relative aspect-square size-30 overflow-hidden rounded-2xl'>
+            <div className='group bg-base-200 relative aspect-square size-24 overflow-hidden rounded-2xl'>
               <Image
                 src={member.image}
                 alt={member.role}
