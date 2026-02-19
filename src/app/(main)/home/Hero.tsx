@@ -14,9 +14,9 @@ export default function Hero({
       centered={false}
       background='neutral'
       id='hero'
-      className='relative flex flex-col items-start'
+      className='relative flex flex-col items-start overflow-x-hidden'
     >
-      <div className='bg-neutral absolute -top-20 left-0 right-0 h-20' />
+      <div className='bg-neutral absolute -top-20 right-0 left-0 h-20' />
       <Image
         src='/assets/hero.png'
         fill
