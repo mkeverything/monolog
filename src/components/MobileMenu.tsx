@@ -5,7 +5,7 @@ import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { getHeaderContent, getSiteContent } from '../lib/cms'
 import { cn } from '../lib/utils'
 import { Badge } from './ui/Badge'
@@ -15,6 +15,18 @@ export function MobileMenu() {
   const header = getHeaderContent()
   const site = getSiteContent()
   const pathname = usePathname()
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isOpen])
 
   const menuItems = [
     {
