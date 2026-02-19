@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { getHeaderContent, getSiteContent } from '../lib/cms'
 import { cn } from '../lib/utils'
 import { Button } from './ui/Button'
@@ -11,9 +11,27 @@ import { Badge } from './ui/Badge'
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [moscowTime, setMoscowTime] = useState('')
   const site = getSiteContent()
   const header = getHeaderContent()
   const pathname = usePathname()
+
+  useEffect(() => {
+    const updateMoscowTime = () => {
+      const time = new Date().toLocaleTimeString('en-US', {
+        timeZone: 'Europe/Moscow',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false,
+      })
+      setMoscowTime(`${time} Moscow, RU`)
+    }
+
+    updateMoscowTime()
+    const interval = setInterval(updateMoscowTime, 1000)
+
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <header className='fixed top-0 right-0 left-0 z-50 bg-transparent'>
@@ -28,6 +46,10 @@ export function Header() {
               className='h-10'
             />
           </Link>
+
+          <Badge className='text-primary hidden items-center justify-center border-0 bg-white p-4 font-light lg:flex'>
+            {moscowTime}
+          </Badge>
 
           {/* Desktop Navigation */}
           <nav
