@@ -44,9 +44,9 @@ export function MobileMenu() {
         className='fixed right-0 bottom-6 left-0 z-50 px-4 md:hidden'
         initial={{ y: 100 }}
         animate={{ y: 0 }}
-        transition={{ duration: 0.5, ease: 'easeOut' }}
+        transition={{ duration: 0.5, ease: 'easeOut', type: 'spring' }}
       >
-        <div className='bg-primary flex items-center justify-between rounded-full px-4 py-3 shadow-lg'>
+        <div className='bg-primary flex items-center justify-between rounded-full px-4 py-3 ring-1 shadow-white ring-white/10'>
           <Link href='/' className='flex items-center gap-2 invert'>
             <Image
               width={87}
