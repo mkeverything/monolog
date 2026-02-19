@@ -3,6 +3,7 @@
     "name": "Monolog",
     "tagline": "Create. Share. Inspire."
   },
+  "menu": "Меню",
   "header": {
     "navigation": [
       {
