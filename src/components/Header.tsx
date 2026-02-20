@@ -36,25 +36,30 @@ export function Header() {
   return (
     <header className='fixed top-0 right-0 left-0 z-50 bg-transparent'>
       <div className='mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-6 xl:px-6'>
-        <div className='flex h-16 items-center justify-between sm:h-20'>
-          <Link href='/' className='text-primary text-xl font-bold sm:text-2xl'>
-            <Image
-              width={87}
-              height={46}
-              src={header.logo.src}
-              alt={header.logo.alt}
-              className='h-10'
-            />
-          </Link>
+        <div className='grid h-16 grid-cols-[1fr_auto_1fr] items-center sm:h-20'>
+          <div className='flex items-center gap-4'>
+            <Link
+              href='/'
+              className='text-primary text-xl font-bold sm:text-2xl'
+            >
+              <Image
+                width={87}
+                height={46}
+                src={header.logo.src}
+                alt={header.logo.alt}
+                className='h-10'
+              />
+            </Link>
 
-          <Badge className='text-primary hidden items-center justify-center border-0 bg-white p-4 font-light lg:flex'>
-            {moscowTime}
-          </Badge>
+            <Badge className='text-primary hidden items-center justify-center m-auto border-0 bg-white p-4 font-light lg:flex'>
+              {moscowTime}
+            </Badge>
+          </div>
 
           {/* Desktop Navigation */}
           <nav
             role='tablist'
-            className='tabs tabs-box text-base-content hidden items-center gap-2 bg-black md:flex'
+            className='tabs tabs-box text-base-content hidden items-center gap-2 justify-self-center bg-black md:flex'
           >
             {header.navigation.map((item) => (
               <Link
@@ -72,11 +77,13 @@ export function Header() {
               </Link>
             ))}
           </nav>
-          <Button variant='accent' size='sm'>
-            <Link href={header.accentButton.href}>
-              {header.accentButton.label}
-            </Link>
-          </Button>
+          <div className='flex justify-end'>
+            <Button variant='accent' size='sm'>
+              <Link href={header.accentButton.href}>
+                {header.accentButton.label}
+              </Link>
+            </Button>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
