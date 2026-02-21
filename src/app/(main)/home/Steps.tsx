@@ -31,7 +31,7 @@ export default function Steps(home: SiteContent['home']) {
                     return (
                       <Badge
                         key={`r1-${i}`}
-                        className={`${badgeStyle} text-xs whitespace-nowrap`}
+                        className={`${badgeStyle} p-4 text-xs whitespace-nowrap`}
                       >
                         {item}
                       </Badge>
@@ -55,7 +55,7 @@ export default function Steps(home: SiteContent['home']) {
                     return (
                       <Badge
                         key={`r2-${i}`}
-                        className={`${badgeStyle} text-xs whitespace-nowrap`}
+                        className={`${badgeStyle} p-4 text-xs whitespace-nowrap`}
                       >
                         {item}
                       </Badge>
@@ -80,7 +80,7 @@ export default function Steps(home: SiteContent['home']) {
                   src={'/assets/meter.svg'}
                 />
                 <div className='absolute top-4 -right-8 flex flex-col'>
-                  <span className='text-3xl font-medium'>
+                  <span className='text-3xl font-semibold'>
                     {home.steps.deadlines.value}
                   </span>
                   <span>{home.steps.deadlines.caption}</span>
@@ -158,15 +158,15 @@ export default function Steps(home: SiteContent['home']) {
         <Card className='relative flex size-full flex-col justify-between overflow-hidden px-0 lg:col-start-3 lg:col-end-6'>
           <CardContent className='flex h-full flex-col justify-between px-4'>
             <CardTitle>{home.steps.pricing.title}</CardTitle>
-            <div className='flex w-full gap-8'>
+            <div className='flex w-full gap-10'>
               <div className='flex size-full flex-col justify-end gap-4'>
-                <Badge className='badge-lg bg-primary text-primary-content w-1/2 justify-between text-xs'>
+                <Badge className='badge-lg bg-primary text-primary-content w-1/3 justify-between p-4 text-sm'>
                   {home.steps.pricing.monolog}
                   <span>₽</span>
                 </Badge>
-                <Badge className='badge-lg bg-base-300 w-full justify-between text-xs'>
+                <Badge className='badge-lg bg-base-300 w-full justify-between p-4 text-sm'>
                   {home.steps.pricing.agencies}
-                  <span>₽₽₽</span>
+                  <span>₽ ₽ ₽</span>
                 </Badge>
               </div>
               <div className='flex flex-col'>
@@ -174,10 +174,10 @@ export default function Steps(home: SiteContent['home']) {
                   {home.steps.pricing.upto}
                 </span>
                 <div>
-                  <span className='text-6xl font-semibold'>
+                  <span className='text-7xl font-semibold'>
                     {home.steps.pricing.multiplierValue}
                   </span>
-                  <span className='text-4xl font-light'>x</span>
+                  <span className='text-4xl font-normal'>x</span>
                 </div>
                 <span className='text-sm'>{home.steps.pricing.caption}</span>
               </div>
