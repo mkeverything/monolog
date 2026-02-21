@@ -89,10 +89,10 @@ export function HorizontalCarousel({
     <>
       <div className='relative flex w-full flex-col'>
         {/* Horizontal Carousel - Single centered item */}
-        <div className='relative flex w-full flex-1 items-center justify-center'>
+        <div className='relative flex w-full flex-1 items-center justify-center pb-16'>
           <div
             ref={carouselRef}
-            className='carousel flex h-full w-full max-w-md snap-x snap-mandatory items-center overflow-x-auto'
+            className='carousel flex h-full w-full max-w-lg snap-x snap-mandatory items-center overflow-x-auto'
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {images.map((image, index) => (
@@ -100,7 +100,7 @@ export function HorizontalCarousel({
                 key={index}
                 className='carousel-item flex h-full w-full shrink-0 snap-center flex-col items-center justify-center gap-8'
               >
-                <Card className='rounded-box relative flex h-48 w-full overflow-hidden p-0'>
+                <Card className='rounded-box relative flex aspect-5/2 w-full overflow-hidden p-0'>
                   <Badge className='bg-primary text-primary-content absolute top-4 left-4 size-6 rounded-full text-xs'>
                     {image.number}
                   </Badge>
@@ -109,10 +109,10 @@ export function HorizontalCarousel({
                     alt={image.alt}
                     width={1024}
                     height={1024}
-                    className='mx-26 object-cover'
+                    className='mx-16 object-cover'
                   />
                 </Card>
-                <div className='flex max-w-86 flex-col gap-4 text-center'>
+                <div className='flex max-w-86 flex-col gap-2 text-center'>
                   <div className='text-xl'>{data.steps[index].title}</div>
                   <div className='text-sm'>{data.steps[index].description}</div>
                 </div>
@@ -126,24 +126,23 @@ export function HorizontalCarousel({
       <div className='absolute bottom-4 mt-6 flex w-full flex-col gap-2'>
         <div className='flex w-full justify-between'>
           <div className='pl-4'>
-            <span className='text-left text-4xl font-semibold'>
+            <span className='text-left text-7xl font-semibold'>
               {progressPercentage}
             </span>
-            <span className='text-3xl'>%</span>
+            <span className='text-5xl font-medium'>%</span>
           </div>
           <Button
-            size='sm'
             variant='secondary'
-            className='text-primary bg-neutral h-fit p-1 font-normal'
+            className='text-primary bg-neutral h-fit p-1'
           >
             <span className='px-2'>{data.cta}</span>
-            <Badge className='bg-secondary size-6 rounded-full p-1 text-xl'>
+            <Badge className='bg-secondary size-8 rounded-full p-1 text-xl'>
               <ArrowRight />
             </Badge>
           </Button>
         </div>
         {mounted && (
-          <Card className='px-4 py-2'>
+          <Card className='px-5 py-3'>
             <div className='flex w-full justify-between gap-1'>
               {Array.from({ length: images.length * barLength }).map(
                 (_, index) => {
@@ -152,7 +151,7 @@ export function HorizontalCarousel({
                   return (
                     <div
                       key={index}
-                      className={`h-6 w-1 rounded-full transition-all duration-300 ${
+                      className={`h-10 w-1.25 rounded-full transition-all duration-300 ${
                         index - barLength <= filledBars
                           ? 'bg-accent'
                           : 'bg-base-300'

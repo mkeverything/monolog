@@ -17,12 +17,12 @@ export default function Gallery(home: SiteContent['home']) {
   return (
     <div
       ref={containerRef}
-      className='relative p-4 sm:p-6'
+      className='relative p-4 pb-16 sm:p-6'
       style={{ height: `${home.workflow.gallery.length * 100}vh` }}
     >
       <div className='sticky top-0 h-dvh w-full'>
         <div className='relative flex h-full w-full flex-col items-center justify-center gap-8 p-4 sm:p-6'>
-          <h2 className='text-primary text-xl font-medium'>
+          <h2 className='text-primary text-2xl font-semibold'>
             {home.workflow.title}
           </h2>
           <HorizontalCarousel
