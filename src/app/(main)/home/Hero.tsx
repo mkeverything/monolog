@@ -32,7 +32,12 @@ export default function Hero({
       <div className='z-20 mt-[25dvh] flex max-w-2/5 grow flex-col gap-2'>
         <div className='flex gap-3'>
           {home.hero.tags.map((tag) => (
-            <Badge key={tag}>{tag}</Badge>
+            <Badge
+              key={tag}
+              className='bg-secondary rounded-sm text-xs font-medium'
+            >
+              {tag}
+            </Badge>
           ))}
         </div>
         <div className='text-primary text-2xl font-medium'>
