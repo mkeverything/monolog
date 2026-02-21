@@ -39,6 +39,7 @@
 html {
   white-space: pre-line;
   user-select: none;
+  font-weight: 500;
 }
 
 @keyframes scroll-left {

@@ -40,10 +40,10 @@ export default function Hero({
             </Badge>
           ))}
         </div>
-        <div className='text-primary text-2xl font-medium'>
+        <div className='text-primary text-2xl font-semibold'>
           {home.hero.title}
         </div>
-        <div className='text-primary text-sm'>{home.hero.subtitle}</div>
+        <div className='text-primary text-sm font-medium'>{home.hero.subtitle}</div>
         <Button
           href={home.hero.ctaPrimary?.href}
           size='sm'

@@ -35,8 +35,8 @@ export function Header() {
 
   return (
     <header className='fixed top-0 right-0 left-0 z-50 bg-transparent'>
-      <div className='w-full px-4 sm:px-6 lg:px-6 xl:px-6'>
-        <div className='grid h-16 grid-cols-[1fr_auto_1fr] items-center sm:h-20'>
+      <div className='w-full px-1'>
+        <div className='grid grid-cols-[1fr_auto_1fr] items-center p-3'>
           <div className='flex items-center gap-4'>
             <Link
               href='/'
@@ -51,7 +51,7 @@ export function Header() {
               />
             </Link>
 
-            <Badge className='text-primary hidden items-center justify-center m-auto border-0 bg-white p-4 font-light lg:flex'>
+            <Badge className='text-primary m-auto hidden items-center justify-center border-0 bg-white p-4 font-light lg:flex'>
               {moscowTime}
             </Badge>
           </div>

@@ -10,26 +10,30 @@ import {
 } from '@/src/components/ui/Card'
 import { SiteContent } from '@/src/lib/cms'
 import { ArrowDown } from 'lucide-react'
+import Image from 'next/image'
 
 export default function Features(home: SiteContent['home']) {
   return (
-    <FullPageSection id='features'>
-      <div className='text-2xl font-medium'>{home.features.title}</div>
-      <div className='mt-12 grid grid-cols-1 gap-2 sm:mt-16 sm:gap-2 md:grid-cols-2 lg:grid-cols-3'>
+    <FullPageSection id='features' className='relative'>
+      <div className='relative mb-8 max-h-14 min-h-8 w-1/2 min-w-sm grow'>
+        <Image src='/assets/features-hero.svg' alt='features-hero' fill />
+      </div>
+      <div className='text-2xl font-semibold'>{home.features.title}</div>
+      <div className='mt-12 grid w-full grid-cols-1 gap-2 sm:mt-16 sm:gap-2 md:grid-cols-2 lg:grid-cols-3'>
         {home.features.items.map((feature) => (
           <Card
             key={feature.title}
             variant='default'
-            className='flex h-40 flex-col justify-between rounded-2xl'
+            className='flex h-36 flex-col justify-between rounded-2xl p-4'
           >
             <CardHeader className='flex w-full justify-between'>
               <CardTitle>{feature.title}</CardTitle>
-              <Badge className='bg-secondary text-primary rounded-md text-xs'>
+              <Badge className='bg-secondary text-primary rounded-md text-xs p-2'>
                 {feature.tag}
               </Badge>
             </CardHeader>
             <CardContent>
-              <CardDescription>{feature.description}</CardDescription>
+              <CardDescription className='text-sm'>{feature.description}</CardDescription>
             </CardContent>
           </Card>
         ))}
