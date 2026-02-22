@@ -1,6 +1,6 @@
 'use client'
 
-import { FullPageSection, SectionTitle } from '@/src/components/FullPageSection'
+import { FullPageSection } from '@/src/components/FullPageSection'
 import { Badge } from '@/src/components/ui/Badge'
 import { SiteContent } from '@/src/lib/cms'
 import { InfoIcon, Minus, Plus } from 'lucide-react'
@@ -15,8 +15,8 @@ export default function FAQ({ faq }: FAQProps) {
 
   return (
     <FullPageSection id='faq'>
-      <SectionTitle>{faq.title}</SectionTitle>
-      <div className='mt-12 w-full max-w-3xl md:mt-16'>
+      <span className='text-2xl font-semibold'>{faq.title}</span>
+      <div className='mt-12 w-full md:mt-16'>
         <div className='flex w-full flex-col gap-4'>
           {faq.items.map((item, index) => (
             <details
@@ -26,9 +26,9 @@ export default function FAQ({ faq }: FAQProps) {
               name='faq-accordion'
             >
               <summary
-                className={`collapse-title flex w-full items-center justify-between gap-2 p-4 text-sm ${index === tabOpen && ''}`}
+                className={`collapse-title flex w-full items-center justify-between gap-2 p-4 text-sm transition-all ${index === tabOpen && 'pb-1'}`}
               >
-                <div className='flex items-center gap-2'>
+                <div className='flex items-center gap-2 text-base'>
                   <InfoIcon className='text-accent size-4' />
                   {item.q}
                 </div>
@@ -40,7 +40,7 @@ export default function FAQ({ faq }: FAQProps) {
                   )}
                 </Badge>
               </summary>
-              <div className='collapse-content text-secondary-content px-10 pt-[-12px] text-xs'>
+              <div className='collapse-content text-base-content/50 px-10 pt-[-12px] text-sm'>
                 <p>{item.a}</p>
               </div>
             </details>
