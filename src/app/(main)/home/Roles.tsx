@@ -1,17 +1,14 @@
-import {
-  FullPageSection,
-  SectionSubtitle,
-} from '@/src/components/FullPageSection'
+import { FullPageSection } from '@/src/components/FullPageSection'
 import { SiteContent } from '@/src/lib/cms'
 import Image from 'next/image'
 
 export default function Roles({ roles }: RolesProps) {
   return (
     <FullPageSection id='roles'>
-      <SectionSubtitle className='font-semibold'>{roles.title}</SectionSubtitle>
-      <span className='mt-2'>{roles.caption}</span>
+      <span className='text-2xl font-semibold'>{roles.title}</span>
+      <span className='mt-2 text-sm'>{roles.caption}</span>
 
-      <div className='mt-12 flex w-full max-w-5xl flex-wrap justify-center gap-20'>
+      <div className='mt-16 flex w-full flex-wrap justify-center gap-20'>
         {roles.team.map((member, index) => (
           <div
             className='flex flex-col items-center gap-2'
