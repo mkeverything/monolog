@@ -16,7 +16,9 @@ export default function Conditions(home: SiteContent['home']) {
 
   return (
     <FullPageSection id='conditions' centered={false}>
-      <div className='text-2xl font-medium'>{conditions.title}</div>
+      <div className='w-full text-center text-2xl font-semibold'>
+        {conditions.title}
+      </div>
       <div className='mt-12 grid grid-cols-1 gap-4 sm:mt-16 md:grid-cols-2 lg:grid-cols-3'>
         {conditions.cards.map((card) => (
           <Card
@@ -50,25 +52,25 @@ export default function Conditions(home: SiteContent['home']) {
                 </div>
               ))}
             </CardContent>
-            <div className='p-6'>
-              <Button className='w-full rounded-full'>{card.cta}</Button>
+            <div className='p-1'>
+              <Button className='w-full rounded-2xl py-2'>{card.cta}</Button>
             </div>
           </Card>
         ))}
-        <Card className='lg:col-span-3'>
+        <Card className='lg:col-span-3 p-4 py-6'>
           <CardHeader>
             <div className='flex w-full items-center justify-between gap-2'>
               <CardTitle>{conditions.support.title}</CardTitle>
-              <Badge className='bg-secondary text-secondary-content rounded-md text-xs'>
+              <Badge className='bg-secondary rounded-sm p-1 text-xs'>
                 {conditions.support.label}
               </Badge>
             </div>
           </CardHeader>
           <CardContent>
-            <div className='grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3'>
+            <div className='grid grid-cols-1 gap-3 sm:grid-cols-2 sm:w-2/3'>
               {conditions.support.checkpoints.map((checkpoint, index) => (
-                <div key={index} className='flex items-start gap-2'>
-                  <Check className='text-accent mt-0.5 h-4 w-4 shrink-0' />
+                <div key={index} className='flex items-center gap-3'>
+                  <Check className='text-accent mt-0.5 size-3 shrink-0' />
                   <span className='text-sm'>{checkpoint}</span>
                 </div>
               ))}
@@ -77,7 +79,7 @@ export default function Conditions(home: SiteContent['home']) {
         </Card>
       </div>
 
-      <p className='text-base-content/60 mt-8 text-center text-sm'>
+      <p className='text-base-content/50 mt-8 text-center text-sm italic'>
         {conditions.disclaimer}
       </p>
     </FullPageSection>
