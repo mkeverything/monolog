@@ -14,7 +14,7 @@ export default function FAQ({ faq }: FAQProps) {
   }
 
   return (
-    <FullPageSection id='faq'>
+    <FullPageSection id='faq' className='max-sm:p-0!'>
       <span className='text-2xl font-semibold'>{faq.title}</span>
       <div className='mt-12 w-full md:mt-16'>
         <div className='flex w-full flex-col gap-4'>
@@ -29,7 +29,7 @@ export default function FAQ({ faq }: FAQProps) {
                 className={`collapse-title flex w-full items-center justify-between gap-2 p-4 text-sm transition-all ${index === tabOpen && 'pb-1'}`}
               >
                 <div className='flex items-center gap-2 text-base'>
-                  <InfoIcon className='text-accent size-4' />
+                  <InfoIcon className='text-accent size-4 max-sm:hidden' />
                   {item.q}
                 </div>
                 <Badge className='bg-secondary text-primary aspect-square rounded-md p-0'>
@@ -40,7 +40,7 @@ export default function FAQ({ faq }: FAQProps) {
                   )}
                 </Badge>
               </summary>
-              <div className='collapse-content text-base-content/50 px-10 pt-[-12px] text-sm'>
+              <div className='collapse-content text-base-content/50 sm:px-10 pt-[-12px] text-sm'>
                 <p>{item.a}</p>
               </div>
             </details>
