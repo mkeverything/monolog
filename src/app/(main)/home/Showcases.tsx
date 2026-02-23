@@ -1,6 +1,6 @@
 'use client'
 
-import { FC, useRef } from 'react'
+import { FC, useRef, useSyncExternalStore } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
 import { SiteContent } from '@/src/lib/cms'
@@ -83,7 +83,17 @@ function ShowcaseCard({
   )
 }
 
-export default function Showcases({ showcases }: ShowcasesProps) {
+const emptySubscribe = () => () => {}
+
+const useHydrated = () => {
+  return useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false,
+  )
+}
+
+function ShowcasesContent({ showcases }: ShowcasesProps) {
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
   const containerRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
@@ -117,7 +127,7 @@ export default function Showcases({ showcases }: ShowcasesProps) {
         ))}
       </div>
       <div className='flex flex-col gap-4 p-4 sm:hidden'>
-        <span className='text-center text-xl font-semibold mb-4'>
+        <span className='mb-4 text-center text-xl font-semibold'>
           {showcases.title}
         </span>
         {images.map((src, index) => (
@@ -126,6 +136,16 @@ export default function Showcases({ showcases }: ShowcasesProps) {
       </div>
     </div>
   )
+}
+
+export default function Showcases({ showcases }: ShowcasesProps) {
+  const isHydrated = useHydrated()
+
+  if (!isHydrated) {
+    return null
+  }
+
+  return <ShowcasesContent showcases={showcases} />
 }
 
 const StaticShowcaseCard: FC<{ src: string; index: number }> = ({
