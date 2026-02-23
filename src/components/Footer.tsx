@@ -8,7 +8,7 @@ export function Footer() {
   const footer = getFooter()
 
   return (
-    <footer className='bg-base-content text-white'>
+    <footer className='bg-base-content text-white max-sm:pb-32'>
       <div className='relative mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-16 lg:px-4'>
         {/* Top section with links and info */}
         <div className='mb-16 grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-8'>
@@ -68,17 +68,21 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className='flex w-full justify-between'>
+        <div className='flex w-full max-sm:flex-col gap-2 justify-between'>
+          <span className='block sm:hidden text-secondary/50'>Документы</span>
           {footer.links.map((link) => (
             <Link
               key={link.label}
               href={link.href}
-              className='text-secondary/50 text-sm font-normal transition-colors duration-200 hover:text-white'
+              className='sm:text-secondary/50 text-sm font-normal transition-colors duration-200 hover:text-white'
             >
               {link.label}
             </Link>
           ))}
         </div>
+        <p className='text-secondary/50 text-sm sm:hidden mt-32'>
+          {footer.copyright}
+        </p>
 
         {/* MONOLOG */}
 
@@ -88,9 +92,9 @@ export function Footer() {
 
         {/* Bottom section - Copyright and Legal links */}
         <div>
-          <div className='text-secondary/50 flex flex-col items-center justify-between gap-4 text-sm font-normal md:flex-row'>
-            <p>{footer.copyright}</p>
-            <div className='flex gap-2'>
+          <div className='text-secondary/50 flex flex-col sm:items-center justify-between gap-4 text-sm font-normal md:flex-row'>
+            <p className='max-sm:hidden'>{footer.copyright}</p>
+            <div className='flex max-sm:flex-col gap-2'>
               <p>{footer.legal.name}</p>
               <p>{footer.legal.tax}</p>
               <p>{footer.legal.orgnip}</p>
