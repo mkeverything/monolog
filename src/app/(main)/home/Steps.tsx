@@ -8,8 +8,8 @@ import Image from 'next/image'
 export default function Steps(home: SiteContent['home']) {
   return (
     <FullPageSection id='steps'>
-      <div className='mt-12 grid min-h-full w-full flex-1 grid-cols-1 gap-2 sm:mt-16 md:grid-cols-2 lg:grid-cols-5 lg:grid-rows-2'>
-        <Card className='flex w-full flex-col justify-between overflow-hidden px-0 lg:col-start-1 lg:col-end-4'>
+      <div className='mt-12 grid min-h-full w-full flex-1 grid-cols-1 gap-2 sm:mt-16 lg:grid-cols-5 lg:grid-rows-2'>
+        <Card className='flex min-h-86 w-full flex-col justify-between overflow-hidden px-0 lg:col-start-1 lg:col-end-4'>
           <CardTitle className='px-4'>{home.steps.developing.title}</CardTitle>
           <CardContent className='relative'>
             {/* Gradient masks for fade effect */}
@@ -65,7 +65,7 @@ export default function Steps(home: SiteContent['home']) {
             </div>
           </CardContent>
         </Card>
-        <Card className='relative flex size-full flex-col justify-between overflow-hidden px-0 lg:col-start-4 lg:col-end-6'>
+        <Card className='relative flex size-full min-h-86 flex-col justify-between overflow-hidden px-0 lg:col-start-4 lg:col-end-6'>
           <CardContent>
             <CardTitle className='px-4'>{home.steps.deadlines.title}</CardTitle>
             <span className='absolute right-4 bottom-4 text-sm italic'>
@@ -89,7 +89,7 @@ export default function Steps(home: SiteContent['home']) {
             </div>
           </CardContent>
         </Card>
-        <Card className='flex size-full flex-col justify-between overflow-hidden px-0 lg:col-start-1 lg:col-end-3'>
+        <Card className='flex size-full min-h-86 flex-col justify-between overflow-hidden px-0 lg:col-start-1 lg:col-end-3'>
           <CardTitle className='px-4'>{home.steps.automation.title}</CardTitle>
           <CardContent className='relative'>
             {/* Gradient masks for fade effect */}
@@ -155,7 +155,7 @@ export default function Steps(home: SiteContent['home']) {
             </div>
           </CardContent>
         </Card>
-        <Card className='relative flex size-full flex-col justify-between overflow-hidden px-0 lg:col-start-3 lg:col-end-6'>
+        <Card className='relative flex size-full min-h-86 flex-col justify-between overflow-hidden px-0 lg:col-start-3 lg:col-end-6'>
           <CardContent className='flex h-full flex-col justify-between px-4'>
             <CardTitle>{home.steps.pricing.title}</CardTitle>
             <div className='flex w-full gap-10'>

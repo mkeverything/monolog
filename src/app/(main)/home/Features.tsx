@@ -15,10 +15,10 @@ import Image from 'next/image'
 export default function Features(home: SiteContent['home']) {
   return (
     <FullPageSection id='features' className='relative'>
-      <div className='relative mb-8 max-h-14 min-h-8 w-1/2 min-w-sm grow'>
+      <div className='relative md:w-2/3 w-full max-w-2xl h-16 px-8 mt-16'>
         <Image src='/assets/features-hero.svg' alt='features-hero' fill />
       </div>
-      <div className='text-2xl font-semibold'>{home.features.title}</div>
+      <div className='text-2xl font-semibold pt-8'>{home.features.title}</div>
       <div className='mt-12 grid w-full grid-cols-1 gap-2 sm:mt-16 sm:gap-2 md:grid-cols-2 lg:grid-cols-3'>
         {home.features.items.map((feature) => (
           <Card
