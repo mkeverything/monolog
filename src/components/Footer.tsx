@@ -8,7 +8,7 @@ export function Footer() {
   const footer = getFooter()
 
   return (
-    <footer className='bg-black/91 text-white'>
+    <footer className='bg-base-content text-white'>
       <div className='relative mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-16 lg:px-4'>
         {/* Top section with links and info */}
         <div className='mb-16 grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-8'>

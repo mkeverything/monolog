@@ -36,7 +36,7 @@ export function Header() {
   return (
     <header className='fixed top-0 right-0 left-0 z-50 bg-transparent'>
       <div className='w-full px-1'>
-        <div className='grid grid-cols-[1fr_auto_1fr] items-center p-3'>
+        <div className='flex w-full justify-between lg:grid lg:grid-cols-[1fr_auto_1fr] items-center p-3'>
           <div className='flex items-center gap-4'>
             <Link
               href='/'
@@ -59,7 +59,7 @@ export function Header() {
           {/* Desktop Navigation */}
           <nav
             role='tablist'
-            className='tabs tabs-box text-base-content hidden items-center gap-2 justify-self-center bg-black md:flex'
+            className='tabs tabs-box text-base-content hidden items-center gap-2 justify-self-center bg-base-content sm:fixed sm:bottom-6 sm:left-0 sm:right-0 sm:flex lg:static'
           >
             {header.navigation.map((item) => (
               <Link
