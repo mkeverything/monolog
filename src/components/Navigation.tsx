@@ -4,10 +4,10 @@ import { MobileMenu } from './MobileMenu'
 export default function Navigation() {
   return (
     <>
-      <div className='hidden md:block'>
+      <div className='hidden sm:block'>
         <Header />
       </div>
-      <div className='md:hidden'>
+      <div className='sm:hidden'>
         <MobileMenu />
       </div>
     </>

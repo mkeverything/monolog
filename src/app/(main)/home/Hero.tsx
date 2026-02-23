@@ -29,12 +29,12 @@ export default function Hero({
         alt='hero'
         className='absolute inset-0 object-cover'
       />
-      <div className='z-20 mt-[25dvh] flex max-w-2/5 grow flex-col gap-2'>
+      <div className='z-20 sm:mt-[25dvh] mt-8 flex w-full sm:max-w-2/5 grow flex-col gap-2'>
         <div className='flex gap-3'>
-          {home.hero.tags.map((tag) => (
+          {home.hero.tags.map((tag, i) => (
             <Badge
               key={tag}
-              className='bg-secondary rounded-sm text-xs font-medium'
+              className={`bg-secondary rounded-sm text-xs text-nowrap font-medium ${i === 2 && 'max-lg:hidden'}`}
             >
               {tag}
             </Badge>
