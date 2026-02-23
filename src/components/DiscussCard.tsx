@@ -19,13 +19,13 @@ export default function DiscussCard({ discuss }: PageProps) {
           alt='discuss-hero'
           className='absolute w-full object-cover sm:hidden'
         />
-        <div className='z-10 flex size-full flex-col justify-between gap-4 p-4'>
+        <div className='z-10 flex size-full flex-col justify-end sm:justify-between gap-4 p-4 max-sm:pb-32'>
           <div className='hidden h-[50dvh] w-full max-sm:block' />
           <Badge className='rounded-sm'>{discuss.badge}</Badge>
           <div className='flex w-full flex-wrap items-end justify-between gap-4'>
             <div className='text-primary-content flex max-w-md flex-col gap-2'>
-              <span className='text-xl'>{discuss.title}</span>
-              <span className='text-xs'>{discuss.caption}</span>
+              <span className='text-2xl'>{discuss.title}</span>
+              <span className='text-base'>{discuss.caption}</span>
             </div>
             <Button size='sm' className='h-fit p-2 px-4'>
               {discuss.cta}
