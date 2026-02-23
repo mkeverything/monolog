@@ -4,17 +4,16 @@ import Image from 'next/image'
 
 export default function Roles({ roles }: RolesProps) {
   return (
-    <FullPageSection id='roles'>
+    <FullPageSection id='roles' className='max-sm:mt-32'>
       <span className='text-2xl font-semibold'>{roles.title}</span>
       <span className='mt-2 text-sm'>{roles.caption}</span>
-
-      <div className='mt-16 flex w-full flex-wrap justify-center gap-20'>
+      <div className='mt-16 flex w-full flex-wrap justify-center sm:gap-20 gap-16'>
         {roles.team.map((member, index) => (
           <div
             className='flex flex-col items-center gap-2'
             key={`${member.role}-${index}`}
           >
-            <div className='group bg-base-200 relative aspect-square size-24 overflow-hidden rounded-2xl'>
+            <div className='group bg-base-200 relative aspect-square size-32 sm:size-24 overflow-hidden rounded-2xl'>
               <Image
                 src={member.image}
                 alt={member.role}
