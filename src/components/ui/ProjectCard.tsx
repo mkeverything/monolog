@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import FrameOverlay from './FrameOverlay'
+import { Badge } from './Badge'
 
 export function ProjectCard({
   image,
@@ -39,9 +40,15 @@ export function ProjectCard({
       </div>
       <div className='flex flex-5 flex-col justify-center gap-3 p-4'>
         <div className='flex items-center justify-between text-base'>
-          <span className='text-base-content font-medium'>{title}</span>
-          <span className='text-base-content/60'>{type}</span>
-          <span className='text-base-content/60'>{year}</span>
+          <span className='text-base-content text-xl font-medium'>{title}</span>
+          <div className='flex gap-2'>
+            <Badge className='bg-neutral/75 text-base-content border-primary/5 rounded-sm border p-1 px-2 text-xs'>
+              {type}
+            </Badge>
+            <Badge className='bg-neutral/75 text-base-content border-primary/5 rounded-sm border p-1 px-2 text-xs'>
+              {year}
+            </Badge>
+          </div>
         </div>
         <div className='relative overflow-hidden'>
           <div className='pointer-events-none absolute top-0 left-0 z-10 h-full w-8 bg-linear-to-r from-white to-transparent' />
