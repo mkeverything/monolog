@@ -1,10 +1,11 @@
 'use client'
 
-import { useRef } from 'react'
+import { FC, useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
 import { SiteContent } from '@/src/lib/cms'
 import { cn } from '@/src/lib/utils'
+import { useMediaQuery } from 'react-responsive'
 
 function ShowcaseCard({
   src,
@@ -54,7 +55,7 @@ function ShowcaseCard({
   return (
     <motion.div
       className={cn(
-        'absolute inset-0 flex items-center justify-center p-16 py-24',
+        'absolute inset-0 flex items-center justify-center p-16 py-24 max-lg:pb-42',
       )}
       style={{
         y,
@@ -83,6 +84,7 @@ function ShowcaseCard({
 }
 
 export default function Showcases({ showcases }: ShowcasesProps) {
+  const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
   const containerRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -95,12 +97,12 @@ export default function Showcases({ showcases }: ShowcasesProps) {
     <div
       id='showcases'
       ref={containerRef}
-      className='relative w-full'
+      className='relative w-full max-sm:pb-32'
       style={{
-        height: `${images.length * 100}vh`,
+        height: isMobile ? '100%' : `${images.length * 100}vh`,
       }}
     >
-      <div className='sticky top-16 h-dvh w-full overflow-hidden'>
+      <div className='top-0 hidden h-dvh w-full overflow-hidden sm:sticky sm:block md:top-16'>
         <div className='absolute top-4 right-0 left-0 z-20 flex items-center justify-center'>
           <span className='text-xl font-semibold'>{showcases.title}</span>
         </div>
@@ -114,6 +116,36 @@ export default function Showcases({ showcases }: ShowcasesProps) {
           />
         ))}
       </div>
+      <div className='flex flex-col gap-4 p-4 sm:hidden'>
+        <span className='text-center text-xl font-semibold mb-4'>
+          {showcases.title}
+        </span>
+        {images.map((src, index) => (
+          <StaticShowcaseCard key={index} src={src} index={index} />
+        ))}
+      </div>
+    </div>
+  )
+}
+
+const StaticShowcaseCard: FC<{ src: string; index: number }> = ({
+  src,
+  index,
+}) => {
+  return (
+    <div
+      className={cn(
+        'relative aspect-3/4 w-full overflow-hidden rounded-3xl shadow-2xl',
+        'bg-neutral-100',
+      )}
+    >
+      <Image
+        src={src}
+        alt={`Showcase ${index + 1}`}
+        fill
+        className='object-cover'
+        priority={index === 0}
+      />
     </div>
   )
 }
