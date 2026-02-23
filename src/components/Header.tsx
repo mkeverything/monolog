@@ -6,8 +6,8 @@ import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { getHeaderContent, getSiteContent } from '../lib/cms'
 import { cn } from '../lib/utils'
-import { Button } from './ui/Button'
 import { Badge } from './ui/Badge'
+import { Button } from './ui/Button'
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -36,7 +36,7 @@ export function Header() {
   return (
     <header className='fixed top-0 right-0 left-0 z-50 bg-transparent'>
       <div className='w-full px-1'>
-        <div className='flex w-full justify-between lg:grid lg:grid-cols-[1fr_auto_1fr] items-center p-3'>
+        <div className='flex w-full items-center justify-between p-3 lg:grid lg:grid-cols-[1fr_auto_1fr]'>
           <div className='flex items-center gap-4'>
             <Link
               href='/'
@@ -59,7 +59,7 @@ export function Header() {
           {/* Desktop Navigation */}
           <nav
             role='tablist'
-            className='tabs tabs-box text-base-content hidden items-center gap-2 justify-self-center bg-base-content sm:fixed sm:bottom-6 sm:left-0 sm:right-0 sm:flex lg:static'
+            className='tabs tabs-box text-base-content bg-base-content hidden items-center gap-2 justify-self-center sm:fixed sm:right-0 sm:bottom-6 sm:left-0 sm:flex lg:static'
           >
             {header.navigation.map((item) => (
               <Link
@@ -84,36 +84,6 @@ export function Header() {
               </Link>
             </Button>
           </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className='hover:bg-base-200 rounded-lg p-2 transition-colors md:hidden'
-            aria-label='Toggle menu'
-          >
-            <svg
-              className='text-base-content h-6 w-6'
-              fill='none'
-              stroke='currentColor'
-              viewBox='0 0 24 24'
-            >
-              {mobileMenuOpen ? (
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M6 18L18 6M6 6l12 12'
-                />
-              ) : (
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M4 6h16M4 12h16M4 18h16'
-                />
-              )}
-            </svg>
-          </button>
         </div>
 
         {/* Mobile Navigation */}

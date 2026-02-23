@@ -83,13 +83,13 @@ export function HorizontalCarousel({
   )
 
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
-  const barLength = isMobile ? 10 : 15
+  const barLength = isMobile ? 5 : 15
 
   return (
     <>
       <div className='relative flex w-full flex-col'>
         {/* Horizontal Carousel - Single centered item */}
-        <div className='relative flex w-full flex-1 items-center justify-center pb-16'>
+        <div className='relative flex w-full flex-1 items-center justify-center'>
           <div
             ref={carouselRef}
             className='carousel flex h-full w-full max-w-lg snap-x snap-mandatory items-center overflow-x-auto'
@@ -123,22 +123,29 @@ export function HorizontalCarousel({
       </div>
 
       {/* Progress Bar - Full width with equal gaps */}
-      <div className='absolute bottom-4 mt-6 flex w-full flex-col gap-2'>
-        <div className='flex w-full justify-between'>
+      <div className='mt-6 flex w-full flex-col gap-2 max-sm:pb-16'>
+        <div className='flex w-full justify-between items-center'>
           <div className='pl-4'>
-            <span className='text-left text-7xl font-semibold'>
+            <span className='text-left text-4xl font-semibold sm:text-7xl'>
               {progressPercentage}
             </span>
-            <span className='text-5xl font-medium'>%</span>
+            <span className='text-3xl font-medium sm:text-5xl'>%</span>
           </div>
           <Button
             variant='secondary'
-            className='text-primary bg-neutral h-fit p-1'
+            className='text-primary bg-secondary sm:bg-neutral h-fit p-1'
           >
-            <span className='px-2'>{data.cta}</span>
-            <Badge className='bg-secondary size-8 rounded-full p-1 text-xl'>
-              <ArrowRight />
-            </Badge>
+            <div className='hidden sm:block'>
+              <span className='px-2'>{data.cta}</span>
+              <Badge className='bg-secondary size-8 rounded-full p-1 text-xl'>
+                <ArrowRight />
+              </Badge>
+            </div>
+            <div className='block sm:hidden'>
+              {/* <Badge className='bg-secondary size-8 rounded-full p-1 text-xl'> */}
+                <ArrowRight />
+              {/* </Badge> */}
+            </div>
           </Button>
         </div>
         {mounted && (

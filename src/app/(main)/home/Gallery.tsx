@@ -17,7 +17,7 @@ export default function Gallery(home: SiteContent['home']) {
   return (
     <div
       ref={containerRef}
-      className='relative p-4 pb-16 sm:p-6'
+      className='relative p-4 pb-16 sm:p-6 h-full justify-between'
       style={{ height: `${home.workflow.gallery.length * 100}vh` }}
     >
       <div className='sticky top-0 h-dvh w-full'>
